@@ -34,6 +34,9 @@ scene.add(camera)
 const ambientLight = new AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
 
+const { baseURL } = useRuntimeConfig().app
+const modelUrl = `${baseURL}models/Room_Portfolio.glb`
+
 // const dracoLoader = new DRACOLoader()
 // dracoLoader.setDecoderPath('/draco/')
 
@@ -135,7 +138,8 @@ function handleRaycastClick() {
   }
 }
 
-const modelUrl = new URL('models/Room_Portfolio.glb', import.meta.env.BASE_URL).toString()
+// const modelUrl = new URL('models/Room_Portfolio.glb', import.meta.env.BASE_URL).toString()
+// const modelUrl = publicPath('models/Room_Portfolio.glb')
 gltfLoader.load(modelUrl, (glb) => {
   glb.scene.traverse((child) => {
     const mesh = child as Mesh
