@@ -135,7 +135,8 @@ function handleRaycastClick() {
   }
 }
 
-gltfLoader.load('/models/Room_Portfolio.glb', (glb) => {
+const modelUrl = new URL('models/Room_Portfolio.glb', import.meta.env.BASE_URL).toString()
+gltfLoader.load(modelUrl, (glb) => {
   glb.scene.traverse((child) => {
     const mesh = child as Mesh
     if (!mesh.isMesh) return
