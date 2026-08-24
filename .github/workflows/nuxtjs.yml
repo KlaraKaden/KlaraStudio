@@ -120,7 +120,8 @@ jobs:
           cache: "pnpm"
       
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run build --preset github_pages
+      # - run: pnpm run build --preset github_pages
+      - run: pnpm exec nuxt build --preset github_pages
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
