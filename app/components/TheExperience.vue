@@ -9,6 +9,7 @@ import {
   Vector2,
   Raycaster,
   Mesh,
+  Object3D,
 } from 'three'
 import { type Ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
@@ -63,12 +64,69 @@ const glassMaterial = new MeshPhysicalMaterial({
 // Raycasting-Zustand
 const raycaster = new Raycaster()
 const pointer = new Vector2()
-const raycastTargets: Mesh[] = []
+// const raycastTargets: Mesh[] = []
+const raycastTargets: Object3D[] = []
 const socialLinks: Record<string, string> = {
   TV: 'https://github.com/andrewwoan/sooahkimsfolio',
-  PictureFrame: 'https://youtu.be/AB6sulUMRGE',
+  PictureFrames: 'https://youtu.be/AB6sulUMRGE',
+  videoediting: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
+  vhs: 'https://klarakaden.github.io/AllesKlara/pearl.html',
+  game: 'https://sheepnshapes.github.io',
+  movieposter: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
+  opening: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
+  animations: 'https://klarakaden.github.io/AllesKlara/animation.html',
+  cooking: 'https://klarakaden.github.io/AllesKlara/recipe_overview.html?filterrecipe=allerezepte',
+  camera: 'https://github.com/andrewwoan/sooahkimsfolio',
+  animationcat: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
+  jewelry: 'https://klarakaden.github.io/AllesKlara/pearl.html',
 }
-let hoveredObject: Mesh | null = null
+const normalizedSocialLinks = Object.entries(socialLinks).map(([namePart, url]) => [
+namePart.toLowerCase(),
+url,
+] as const)
+
+function findLinkByName(name?: string | null) {
+if (!name) return null
+const normalizedName = name.toLowerCase()
+
+for (const [namePart, url] of normalizedSocialLinks) {
+if (normalizedName.includes(namePart)) {
+return url
+}
+}
+
+return null
+}
+
+function resolveLinkFromObject(start: Object3D | null | undefined) {
+let current: Object3D | null | undefined = start
+
+while (current) {
+const url = findLinkByName(current.name)
+if (url) return url
+current = current.parent
+}
+
+return null
+}
+
+function getClickableRoot(start: Object3D | null | undefined) {
+  let current: Object3D | null | undefined = start
+
+  while (current?.parent) {
+    const parentLink = findLinkByName(current.parent.name)
+    if (parentLink) {
+      current = current.parent
+    } else {
+      break
+    }
+  }
+
+  return current
+}
+
+// let hoveredObject: Mesh | null = null
+let hoveredObject: Object3D | null = null
 
 function openExternal(url: string) {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -95,13 +153,27 @@ function setPointerFromTouch(event: TouchEvent) {
 
 function updateHoverState() {
   raycaster.setFromCamera(pointer, camera)
-  const hits = raycaster.intersectObjects(raycastTargets, false)
+  // const hits = raycaster.intersectObjects(raycastTargets, false)
+  const hits = raycaster.intersectObjects(raycastTargets, true)
 
   const firstHit = hits[0]
-  const nextHovered = (firstHit?.object as Mesh | undefined) ?? null
+  // const nextHovered = (firstHit?.object as Mesh | undefined) ?? null
+  const nextHovered = getClickableRoot(firstHit?.object as Object3D | undefined)
+
+    console.log('hovered:', nextHovered?.name, 'parent:', nextHovered?.parent?.name)
+
+  // if (hoveredObject && hoveredObject !== nextHovered) {
+  //   const previousInitialScale = hoveredObject.userData.initialScale
+  //   if (previousInitialScale) {
+  //     hoveredObject.scale.copy(previousInitialScale)
+  //   }
+  // }
 
   if (hoveredObject && hoveredObject !== nextHovered) {
-    const previousInitialScale = hoveredObject.userData.initialScale
+    const previousInitialScale = hoveredObject.userData.initialScale as
+      | { x: number; y: number; z: number }
+      | undefined
+
     if (previousInitialScale) {
       hoveredObject.scale.copy(previousInitialScale)
     }
@@ -109,10 +181,26 @@ function updateHoverState() {
 
   hoveredObject = nextHovered ?? null
 
+  // if (hoveredObject) {
+  //   const initialScale = hoveredObject.userData.initialScale
+  //   if (initialScale) {
+  //     hoveredObject.scale.set(initialScale.x * 1.15, initialScale.y * 1.15, initialScale.z * 1.15)
+  //     document.body.style.cursor = 'pointer'
+  //     return
+  //   }
+  // }
+
   if (hoveredObject) {
-    const initialScale = hoveredObject.userData.initialScale
+    const initialScale = hoveredObject.userData.initialScale as
+      | { x: number; y: number; z: number }
+      | undefined
+
     if (initialScale) {
-      hoveredObject.scale.set(initialScale.x * 1.15, initialScale.y * 1.15, initialScale.z * 1.15)
+      hoveredObject.scale.set(
+        initialScale.x * 1.15,
+        initialScale.y * 1.15,
+        initialScale.z * 1.15
+      )
       document.body.style.cursor = 'pointer'
       return
     }
@@ -123,19 +211,27 @@ function updateHoverState() {
 
 function handleRaycastClick() {
   raycaster.setFromCamera(pointer, camera)
-  const hits = raycaster.intersectObjects(raycastTargets, false)
+  // const hits = raycaster.intersectObjects(raycastTargets, false)
+  const hits = raycaster.intersectObjects(raycastTargets, true)
 
   const firstHit = hits[0]
   if (!firstHit) return
 
-  const obj = firstHit.object as Mesh
+  // const obj = firstHit.object as Mesh
+  const obj = getClickableRoot(firstHit.object as Object3D | undefined)
+  const url = obj?.userData.linkUrl as string | undefined
 
-  for (const [namePart, url] of Object.entries(socialLinks)) {
-    if (obj.name.includes(namePart)) {
-      openExternal(url)
-      return
-    }
-  }
+  // for (const [namePart, url] of Object.entries(socialLinks)) {
+  //   if (obj.name.includes(namePart)) {
+  //     openExternal(url)
+  //     return
+  //   }
+  // }
+  // const url = (obj.userData.linkUrl as string | undefined) ?? resolveLinkFromObject(obj)
+if (url) {
+  openExternal(url)
+}
+
 }
 
 // const modelUrl = new URL('models/Room_Portfolio.glb', import.meta.env.BASE_URL).toString()
@@ -156,13 +252,38 @@ gltfLoader.load(modelUrl, (glb) => {
     }
 
     // Klickbare / hoverbare Objekte definieren
-    const isSocialObject = Object.keys(socialLinks).some((key) =>
-      mesh.name.includes(key)
+    // const isSocialObject = Object.keys(socialLinks).some((key) =>
+    //   mesh.name.includes(key)
+    // )
+
+    // console.log('mesh:', mesh.name, 'isSocialObject:', isSocialObject)
+
+    // if (isSocialObject) {
+    //   mesh.userData.initialScale = mesh.scale.clone()
+    //   raycastTargets.push(mesh)
+    // }
+
+    const linkUrl = resolveLinkFromObject(mesh)
+    const clickableRoot = getClickableRoot(mesh)
+const isSocialObject = Boolean(linkUrl)
+
+console.log(
+      'mesh:',
+      mesh.name,
+      'parent:',
+      mesh.parent?.name,
+      'root:',
+      clickableRoot?.name,
+      'isSocialObject:',
+      isSocialObject,
+      'linkUrl:',
+      linkUrl
     )
 
-    if (isSocialObject) {
-      mesh.userData.initialScale = mesh.scale.clone()
-      raycastTargets.push(mesh)
+if (isSocialObject && linkUrl && clickableRoot) {
+      clickableRoot.userData.initialScale = clickableRoot.scale.clone()
+      clickableRoot.userData.linkUrl = linkUrl
+      raycastTargets.push(clickableRoot)
     }
   })
 
