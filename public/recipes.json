@@ -1,0 +1,211 @@
+[
+  {
+    "slug": "testrezept",
+    "title": "TestRezept",
+    "description": "Sollte jetzt keine neue Eingabe des Tokens brauchen.",
+    "date": "2025-11-20",
+    "image": "/uploads/testrezept.png",
+    "amount": "1 Person",
+    "time": "40 min",
+    "pdf": "",
+    "ingredients": [
+      "1 Tasse Übung",
+      "600g GPT"
+    ],
+    "steps": [
+      "Frag GPT nach Problem.",
+      "Mecker rum."
+    ],
+    "categories": [
+      "nudeln",
+      "kekse"
+    ]
+  },
+  {
+    "slug": "erdbeertest",
+    "title": "Erdbeertest",
+    "description": "Das ist ein Test, ob jetzt die Seitenbreite bei dem Layout stimmt.",
+    "date": "2025-11-20",
+    "image": "/uploads/erdbeertest.png",
+    "amount": "5 Stück",
+    "time": "30 min",
+    "pdf": "",
+    "ingredients": [
+      "3 Stück Erdbeeren",
+      "500g Zucker",
+      "150g Liebe",
+      "30g Glcük",
+      "1 Msp. Skill"
+    ],
+    "steps": [
+      "Das ist nur mal ein Test ob das Layout jetzt stimmt.",
+      "Wenn nicht ist das etwas doof.",
+      "Dann muss ich es nochmal überarbeiten."
+    ],
+    "categories": [
+      "torten",
+      "backen"
+    ]
+  },
+  {
+    "slug": "vanilletest",
+    "title": "VanilleTest",
+    "description": "Das ist jetzt ein erneuter Test, ob das Bearbeiten eines Rezeptes jetzt funktioniert.",
+    "date": "2025-11-21",
+    "image": "/uploads/vanilletest.png",
+    "amount": "10 Stück",
+    "time": "10 min",
+    "pdf": "",
+    "ingredients": [
+      "4 Eier",
+      "1 Prise Glück",
+      "Glasur:",
+      "eine Menge Puderzucker",
+      "bunte Streusel"
+    ],
+    "steps": [
+      "Vorbereitung:",
+      "frage CPT",
+      "Lösung:",
+      "überprüfe die Antwort",
+      "Servieren:",
+      "Sollte alles funktionieren, dann sieht man die überarbeitete Version auf der Rezeptseite"
+    ],
+    "categories": [
+      "mitkartoffeln",
+      "sosse",
+      "hauptspeisen",
+      "nachspeise"
+    ]
+  },
+  {
+    "slug": "schokotest",
+    "title": "Schokotest",
+    "description": "das ist ein Test ohne Abschnitten",
+    "date": "2025-11-21",
+    "image": "",
+    "amount": "5 Personen",
+    "time": "40 min",
+    "pdf": "",
+    "ingredients": [
+      "500g Mehl",
+      "300g Wasser",
+      "5 Eier",
+      "150g Zucker"
+    ],
+    "steps": [
+      "Vorbereitung:",
+      "Mehl sieben",
+      "Eier trennen",
+      "#Teig",
+      "Mehl mit Wasser mischen",
+      "Kneten",
+      "##Backen",
+      "30 Minuten bei 180°C"
+    ],
+    "categories": [
+      "nudeln",
+      "torten"
+    ]
+  },
+  {
+    "slug": "pfirsichtest",
+    "title": "Pfirsichtest",
+    "description": "Das ein Test, ob auch bei den Zutaten Unterüberschriften funktionieren",
+    "date": "2025-11-21",
+    "image": "/uploads/pfirsichtest.jpg",
+    "amount": "20 Stück",
+    "time": "10 min",
+    "pdf": "",
+    "ingredients": [
+      "Teig:",
+      "500g Mehl",
+      "200g Zucker",
+      "100g Butter",
+      "2 Eier",
+      "Glasur:",
+      "100ml Wasser",
+      "500g Puderzucker",
+      "1 Prise Zimt"
+    ],
+    "steps": [
+      "Vorbereitung:",
+      "Mehl sieben",
+      "Eier trennen",
+      "Teig:",
+      "Mehl mit Wasser mischen",
+      "Kneten",
+      "Backen:",
+      "30 Minuten bei 180°C"
+    ],
+    "categories": [
+      "nudeln",
+      "kekse",
+      "kuchen"
+    ]
+  },
+  {
+    "slug": "nussplaetzchen",
+    "title": "Nussplätzchen",
+    "date": "2024-07-19",
+    "image": "/assets/images/Bild_folgt.png",
+    "amount": "20 Stück",
+    "time": "30 Minuten",
+    "pdf": "/recipes/PDF/Nussplaetzchen.pdf",
+    "description": "Die Nussplätzchen sind perfekt für Weihnachten. Sie sind noch leicht weich und saftig. Der Klecks Schokolade oben drauf rundet den Geschmack ab.",
+    "ingredients": [
+      "125 g Haselnüsse, gemahlen",
+      "125 g Mandeln, gemahlen",
+      "150 g Zucker",
+      "50 g Butter",
+      "3 EL Mehl",
+      "1 Prise Salz",
+      "1 Msp. Zimt",
+      "4 Eiweiße",
+      "200 g Schokolade"
+    ],
+    "steps": [
+      "Backofen auf 180 °C Umluft vorheizen. Zwei Backbleche mit Backpapier auslegen.",
+      "Haselnüsse, Mandeln, Zucker, Mehl und Zimt in einer Schüssel mischen. Butter zerlassen und dazugeben. Gut verrühren.",
+      "Eiweiße mit einer Prise Salz steif schlagen und unter die Masse heben.",
+      "Mit einem TL kleine Häufchen auf ein Backblech setzen und 10–15 Minuten goldbraun backen.",
+      "Nach dem Abkühlen auf jedes Plätzchen etwas geschmolzene Schokolade geben."
+    ],
+    "categories": [
+      "backen",
+      "kekse"
+    ]
+  },
+  {
+    "slug": "kirschtest",
+    "title": "Kirschtest",
+    "description": "Das ist ein Test zum probieren, ob das Erstellen eines neuen Rezeptes immer noch funktioniert.",
+    "date": "2025-11-21",
+    "image": "/uploads/kirschtest.png",
+    "amount": "1 Stück",
+    "time": "50 min",
+    "pdf": "",
+    "ingredients": [
+      "300g Mehl",
+      "150ml Wasser",
+      "700g Butter",
+      "1 Msp. Muskat",
+      "Marinade:",
+      "3 Zehen Knoblauch",
+      "4 Tassen Milch"
+    ],
+    "steps": [
+      "Vorbereitung:",
+      "Schreibe den Text auf, was zu tun ist.",
+      "Arbeiten:",
+      "Hoffe darauf das der Code richtig ist.",
+      "Servieren:",
+      "Freue dich, wenn es funktioniert hat."
+    ],
+    "categories": [
+      "backen",
+      "kekse",
+      "nachspeise"
+    ]
+  }
+]

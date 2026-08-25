@@ -127,6 +127,7 @@ function getClickableRoot(start: Object3D | null | undefined) {
 
 // let hoveredObject: Mesh | null = null
 let hoveredObject: Object3D | null = null
+const isModelLoaded = ref(false)
 
 function openExternal(url: string) {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -160,7 +161,7 @@ function updateHoverState() {
   // const nextHovered = (firstHit?.object as Mesh | undefined) ?? null
   const nextHovered = getClickableRoot(firstHit?.object as Object3D | undefined)
 
-    console.log('hovered:', nextHovered?.name, 'parent:', nextHovered?.parent?.name)
+    //console.log('hovered:', nextHovered?.name, 'parent:', nextHovered?.parent?.name)
 
   // if (hoveredObject && hoveredObject !== nextHovered) {
   //   const previousInitialScale = hoveredObject.userData.initialScale
@@ -267,18 +268,18 @@ gltfLoader.load(modelUrl, (glb) => {
     const clickableRoot = getClickableRoot(mesh)
 const isSocialObject = Boolean(linkUrl)
 
-console.log(
-      'mesh:',
-      mesh.name,
-      'parent:',
-      mesh.parent?.name,
-      'root:',
-      clickableRoot?.name,
-      'isSocialObject:',
-      isSocialObject,
-      'linkUrl:',
-      linkUrl
-    )
+// console.log(
+//       'mesh:',
+//       mesh.name,
+//       'parent:',
+//       mesh.parent?.name,
+//       'root:',
+//       clickableRoot?.name,
+//       'isSocialObject:',
+//       isSocialObject,
+//       'linkUrl:',
+//       linkUrl
+//     )
 
 if (isSocialObject && linkUrl && clickableRoot) {
       clickableRoot.userData.initialScale = clickableRoot.scale.clone()
@@ -288,6 +289,8 @@ if (isSocialObject && linkUrl && clickableRoot) {
   })
 
   scene.add(glb.scene)
+
+  isModelLoaded.value = true
 
   controls?.target.set(0, 3.5, 0)
   controls?.update()
@@ -355,7 +358,12 @@ onUnmounted(() => {
 
 
 <template>
+  <NuxtLink :to="{ path: '/' }" id="homebutton">Home</NuxtLink>
   <div id="experience">
+    <div v-if="!isModelLoaded" id="loading-screen">
+      <div class="loading-text">Loading...</div>
+    </div>
+
     <canvas ref="experience" id="experience-canvas"></canvas>
   </div>
 </template>
@@ -379,6 +387,35 @@ onUnmounted(() => {
 #experience-canvas {
     width: 100%;
     height: 100%;
+}
+
+#loading-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  background: #e1f0c2;
+}
+
+.loading-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  color: #7b4d29;
+}
+
+#homebutton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    background-color: #decf91;
+    color: #7b4d29;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 </style>
 

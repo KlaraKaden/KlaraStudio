@@ -2,6 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex; /* This makes the body a flex container */
+    flex-direction: column; /* Sets the flex container to have a vertical column layout. */
+    min-height: 100vh; /* Ensures that the body takes up at least the full height of the viewport. */
+    box-sizing: inherit;
+    background-color: darkseagreen;
 }
 
 #experience {
@@ -17,3 +31,204 @@
     width: 100%;
     height: 100%;
 }
+
+
+a.back-button{
+    text-decoration: none;
+}
+.back-button {
+    font-size: 1.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    /* border: 1px solid #36401f;
+    background-color: #91af81; */
+    color: #36401f;
+    display: flex;
+    justify-content: start;
+    width: 5vw;
+    margin: 0 1em;
+    margin-top: 0.5em;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.back-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.back-button span:after {
+    content: 'Zurück';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -70px;
+    /* right: -100px; */
+    transition: 0.5s;
+}
+.back-button:hover span {
+    padding-right: 100px;
+}
+.back-button:hover {
+    /* width: 7vw; */
+    width: 145px;
+    transition: 0.5s;
+}
+.back-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.back-button:hover {
+    background-color: #c8e5b9;
+}
+.change .bar1 {
+    transform: rotate(45deg) /* translate(-5px, 5px) */;
+    transform-origin: left center;
+}
+.change .bar2 {
+    opacity: 0;
+    /* transform: rotate(135deg);
+    margin-left: 0;
+    transform-origin: center; */
+}
+.change .bar3 {
+    transform: rotate(-45deg) /* translate(-5px, -5px) */; 
+    transform-origin: left center;
+}
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 10vw;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #c3defa;
+    color: #1f1d60;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+  
+#topBtn:hover {
+    background-color: #7992ac;
+}
+
+.portfolio-theme {
+            background-color: #EB933B;
+            padding: 2em;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            margin: 3em;
+            margin-bottom: 2em;
+    }
+    .portfolio-theme h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 4.5rem;
+            color: #750000;
+            margin-top: 0.2em;
+            margin-bottom: 0.5em;
+    }
+    a .portfolio-theme div h2:hover {
+            color: #738c39;
+    }
+
+    .portfolio-theme div p {
+            margin-top: 30px;
+            margin-left: 3em;
+            padding: 3px 6px;
+            width: 50vw;
+            font-size: 25px;
+            color: #750000;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .portfolio-theme img {
+            border-radius: 10px;
+            object-fit: cover;
+            height: auto;
+            cursor: pointer;
+            width: 22%;
+    }
+    .portfolio-theme video {
+            border-radius: 10px;
+            width: 33%;
+            height: auto;
+            align-self: center;
+    }
+    .articlelink div h2{
+            margin: 0.5em 0;
+    }
+.portfolio-heading {
+            font-size: 5vw;
+            font-weight: bolder;
+            padding-bottom: 10px;
+            font-family: Salsa;
+            color: #750000;
+            text-align: left;
+            font-style: normal;
+            margin: 1em 0;
+            margin-left: 0.7em;
+            margin-bottom: 0.5em;
+            padding: 0;
+    }
+
+    .informationtext {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.5em;
+            margin: 0.5em 4em;
+            color: #3f0a0a;
+    }
+
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "sidebar main";
+    }
+
+    /* Prevent layout shift when vertical scrollbar appears/disappears during filtering */
+    /* html {
+        /* always reserve vertical scrollbar space to avoid width jumps
+        overflow-y: scroll;
+    }
+    body {
+        /* modern stable scrollbar support where available
+        scrollbar-gutter: stable;
+    } */
+
+    /* Ensure grid fills available width and main column can shrink without causing overflow */
+    /* .gridcontainer {
+        width: 100%;
+    }
+    .main-rezepte {
+        min-width: 0;
+    } */
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 40px 20px 0 20px;
+        margin-top: -70px;
+    }
+
+    .container .heading {
+        width: 70%; /* 65% */
+        padding-bottom: 50px;
+    }
+
+    .container .heading h3 {
+        font-size: 4em;
+        font-weight: bolder;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #1f1d60;
+        font-family: PlayfairDisplay;
+        color: #1f1d60;
+        margin-top: 0;
+    }
