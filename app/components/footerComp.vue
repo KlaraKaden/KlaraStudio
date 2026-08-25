@@ -33,29 +33,43 @@ const now = new Date()
 const currentYear = now.getFullYear()
 const options = { year: 'numeric', month: 'short', day: 'numeric' }
 const formattedDate = now.toLocaleDateString('de-DE', options)
+const config = useRuntimeConfig()
+const baseURL = config.app.baseURL
 
 // Importiere Icons damit Vite/Nuxt die URLs korrekt auflöst
-import instDefault from '~/assets/images/icon_instagram.png'
-import instHover from '~/assets/images/icon_instagram_hover_salmon.PNG'
-import discDefault from '~/assets/images/icon_discord.png'
-import discHover from '~/assets/images/icon_discord_hover_salmon.PNG'
-import pinDefault from '~/assets/images/icon_pinterest.png'
-import pinHover from '~/assets/images/icon_pinterest_hover_salmon.PNG'
+// import instDefault from '~/assets/images/icon_instagram.png'
+// import instHover from '~/assets/images/icon_instagram_hover_salmon.PNG'
+// import discDefault from '~/assets/images/icon_discord.png'
+// import discHover from '~/assets/images/icon_discord_hover_salmon.PNG'
+// import pinDefault from '~/assets/images/icon_pinterest.png'
+// import pinHover from '~/assets/images/icon_pinterest_hover_salmon.PNG'
 
 // Bild-Handler: setze src je nach Zustand (hover/default) mit aufgelösten Import-URLs
 const imageMap = {
+    // i: {
+    //     default: instDefault,
+    //     hover: instHover
+    // },
+    // d: {
+    //     default: discDefault,
+    //     hover: discHover
+    // },
+    // p: {
+    //     default: pinDefault,
+    //     hover: pinHover
+    // }
     i: {
-        default: instDefault,
-        hover: instHover
+        default: `${baseURL}/images/icons/icon_instagram.png`,
+        hover: `${baseURL}/images/icons/icon_instagram_hover_salmon.PNG`,
     },
     d: {
-        default: discDefault,
-        hover: discHover
+        default: `${baseURL}/images/icons/icon_discord.png`,
+        hover: `${baseURL}/images/icons/icon_discord_hover_salmon.PNG`,
     },
     p: {
-        default: pinDefault,
-        hover: pinHover
-    }
+        default: `${baseURL}/images/icons/icon_pinterest.png`,
+        hover: `${baseURL}/images/icons/icon_pinterest_hover_salmon.PNG`,
+    },
 }
 
 function setImage(service, state, img) {
