@@ -137,7 +137,6 @@ const onImgError = (ev: Event) => {
     const target = ev.target as HTMLImageElement | null
     if (target) target.src = fallbackImg
   } catch {
-    // ignore
   }
 }
 
@@ -222,7 +221,6 @@ const filterRecipe = (category: string, element: any) => {
           dropdown.style.display = 'block'
         }
       } catch {
-        // ignore
       }
     }
   } else {
@@ -343,7 +341,6 @@ watch(() => route.query.filterrecipe, (newFilter) => {
 
 <style scoped>
 #body_recipe_overview {
-        /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='90' height='90' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M0 0v90h90V0Zm3.735.72h5.628v8.644H.72V3.735Zm7.068 0h8.46v8.644h-8.46zm9.9 0h5.231v17.283h-8.309v7.554H.72v-4.854h10.083v-9.9h9.9zm6.671 0h6.822v10.25H44.28v7.033H27.374Zm28.43 0h6.821v17.283H45.72V10.97h10.083zm8.261 0h5.232v10.084h9.9v9.9H89.28v4.853H72.374v-7.554h-8.309zm6.672 0h8.46v8.644h-8.46zm9.9 0h5.628l3.015 3.015v5.629h-8.644Zm-45 0h18.726v8.81H35.636ZM.72 10.804h8.643v8.46H.72Zm79.916 0h8.644v8.46h-8.644zm-61.57 8.64h6.868v6.113h-6.869zm8.308 0H44.28v4.853H34.197v9.9h-9.9V44.28h-5.232V26.997h8.31zm18.346 0h16.905v7.553h8.31V44.28h-5.232V34.197h-9.9v-9.9H45.72Zm18.345 0h6.87v6.113h-6.87zm-28.429 6.293h8.644v8.46h-8.644zm10.084 0h8.643v8.46H45.72Zm-45 1.26h16.905V44.28H10.97V34.197H.72Zm71.654 0H89.28v7.2H79.031V44.28h-6.657ZM.72 35.637h8.809v18.727H.72Zm25.017 0h8.46v8.643h-8.46zm9.9 0h8.643v5.628l-3.015 3.015h-5.629zm10.083 0h8.643v8.643h-5.628l-3.015-3.015Zm10.083 0h8.46v8.643h-8.46zm24.668 0h8.809v18.727h-8.809ZM10.97 45.72h6.656v17.283H.72v-7.2h10.249zm8.096 0h5.232v10.084h9.9v9.9H44.28v4.853H27.374v-7.554h-8.309zm6.672 0h8.46v8.644h-8.46zm9.9 0h5.628l3.015 3.015v5.629h-8.644zm13.098 0h5.628v8.644H45.72v-5.629Zm7.068 0h8.46v8.644h-8.46zm9.9 0h5.231v17.283h-8.309v7.554H45.72v-4.854h10.083v-9.9h9.9zm6.671 0h6.657v10.084H89.28v7.2H72.374ZM35.636 55.804h8.644v8.46h-8.644zm10.084 0h8.643v8.46H45.72Zm-45 8.64h16.905v7.553h8.31V89.28h-5.232V79.197h-9.9v-9.9H.72Zm18.345 0h6.87v6.113h-6.87zm45 0h6.87v6.113h-6.87zm8.31 0H89.28v4.853H79.197v9.9h-9.9V89.28h-5.232V71.997h8.31zM.72 70.736h8.643v8.46H.72Zm79.916 0h8.644v8.46h-8.644zm-53.262 1.26H44.28v7.034H34.196v10.25h-6.822zm18.346 0h16.905V89.28h-6.822V79.031H45.72ZM35.636 80.47h18.727v8.809H35.636ZM.72 80.637h8.643v8.643H3.735L.72 86.265Zm10.083 0h8.46v8.643h-8.46zm59.934 0h8.46v8.643h-8.46zm9.9 0h8.643v5.628l-3.015 3.015h-5.629z'  stroke-width='1' stroke='none' fill='hsla(122, 24%, 72%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
         background-image: url('/images/square_background.svg');
         position: relative;
         width: 100%;
@@ -356,16 +353,12 @@ watch(() => route.query.filterrecipe, (newFilter) => {
     .sidebar-rezepte{
         grid-area: sidebar;
         margin-left: 50px;
-        /* border-right: 1px solid #7b4d29;  */
         margin-top: 165px;
         margin-bottom: 10px;
     }
     .main-rezepte {
         grid-area: main;
-        /* font-size: 20px; */
-        /* padding: 0px 10px; */
         padding: 0 3em 0 3em;
-        /* padding: 0px 20px 0 30px; */
         margin-top: 165px;
         list-style: none;
         border-left: 1px solid #7b4d29;
@@ -374,9 +367,6 @@ watch(() => route.query.filterrecipe, (newFilter) => {
     .container {
         margin-top: -70px;
     }
-    /* .container .heading {
-        width: 70%;
-    } */
     .container .heading h3 {
         border-bottom: 3px solid #7b4d29;
         color: #7b4d29;
@@ -395,10 +385,6 @@ watch(() => route.query.filterrecipe, (newFilter) => {
         cursor: pointer;
         margin: 8px;
     }
-    /* #label {
-        position: sticky;
-        top: 100px;
-    } */
     #searchbar {
         background-color: #b4d3a6;
         width: 0px;
@@ -418,7 +404,6 @@ watch(() => route.query.filterrecipe, (newFilter) => {
     }
     .magnifyingGlass {
         font-size: 20px;
-        /* color: #36401f; */
         color: #7b4d29;
         display: inline-block;
         position: absolute;
@@ -430,15 +415,9 @@ watch(() => route.query.filterrecipe, (newFilter) => {
     #searchbar:focus + .magnifyingGlass {
         opacity: 0;
     }
-    /* .filter-list-rezepte {
-        position: sticky;
-        top: 150px;
-    } */
     .filter-list-rezepte ul {
         list-style: none;
-        /* margin: 0; */
         padding: 0px;
-        /* min-width: 12em; */
     }
     .filter-list-rezepte li.activerecipe {
         background-color: #decf91;
@@ -458,25 +437,13 @@ watch(() => route.query.filterrecipe, (newFilter) => {
         border-radius: 10px;
     }
 
-    /* Dropdown container (hidden by default).*/
-    /* .dropdown-container {
-    display: none;
-    padding-left: 8px;
-    }
-    .filter-list-rezepte {
-        margin-left: 30px;
-    } */
 
     .dropdown-container {
         display: none;
         padding-left: 20px;
         margin-left: 20px;
     }
-    /* .dropdown-container li {
-        margin-left: 30px;
-    } */
 
-    /* Style the sidenav links and the dropdown button */
     .filter-list-rezepte li, .dropdown-btn {
         padding: 5px 0px 5px 5px;
         margin: 20px auto;
@@ -504,14 +471,12 @@ watch(() => route.query.filterrecipe, (newFilter) => {
     .main-rezepte a {
         display: block;
         text-decoration: none;
-        /* margin-left: 3em;
-        margin-right: 3em; */
         margin: 0;
         padding: 0;
     }
     .recipelink {
         width: 100%;
-        box-sizing: border-box; /* ensure padding/border stays inside width */
+        box-sizing: border-box;
         background-color: #e8d69b;
         padding: 2em;
         display: flex;
@@ -547,10 +512,6 @@ watch(() => route.query.filterrecipe, (newFilter) => {
         height: 250px;
         width: 250px;
     }
-    /* .burgerdisplay {
-        display: none;
-    } */
-    /* Erster Eintrag in der Hauptnavigation ausblenden */
     .sidebar-rezepte .dropdown-container li:first-child {
         display: none;
     }

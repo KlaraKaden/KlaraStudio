@@ -55,9 +55,7 @@
                 <ul class="child">
                     <li class="parent upperBorder">
                         <NuxtLink to="/portfolio" @click="() => { setActiveLink('portfolio'); closeMenus() }" :class="{ activenav: activeNav === 'portfolio' }">Portfolio</NuxtLink>
-                        <!-- <a href="portfolio.html">Portfolio</a> -->
                     </li>
-                    <!-- <li class="parent"><a href="wunschzettel.html">Wunschzettel</a></li> -->
                 </ul>
             </li>
         </ul>

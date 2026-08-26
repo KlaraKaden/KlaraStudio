@@ -45,7 +45,7 @@ const modelUrl = `${baseURL}models/Room_Portfolio.glb`
 const gltfLoader = new GLTFLoader()
 // gltfLoader.setDRACOLoader(dracoLoader)
 
-// Glasmaterial (wie in deinem main.js-Ansatz)
+// Glasmaterial 
 const glassMaterial = new MeshPhysicalMaterial({
   transmission: 1,
   opacity: 0.5, // 1
@@ -65,7 +65,6 @@ const glassMaterial = new MeshPhysicalMaterial({
 // Raycasting-Zustand
 const raycaster = new Raycaster()
 const pointer = new Vector2()
-// const raycastTargets: Mesh[] = []
 const raycastTargets: Object3D[] = []
 const socialLinks: Record<string, string> = {
   TV: `${baseURL}portfolio#naturdoku`,
@@ -126,7 +125,6 @@ function getClickableRoot(start: Object3D | null | undefined) {
   return current
 }
 
-// let hoveredObject: Mesh | null = null
 let hoveredObject: Object3D | null = null
 const isModelLoaded = ref(false)
 
@@ -155,21 +153,10 @@ function setPointerFromTouch(event: TouchEvent) {
 
 function updateHoverState() {
   raycaster.setFromCamera(pointer, camera)
-  // const hits = raycaster.intersectObjects(raycastTargets, false)
   const hits = raycaster.intersectObjects(raycastTargets, true)
 
   const firstHit = hits[0]
-  // const nextHovered = (firstHit?.object as Mesh | undefined) ?? null
   const nextHovered = getClickableRoot(firstHit?.object as Object3D | undefined)
-
-    //console.log('hovered:', nextHovered?.name, 'parent:', nextHovered?.parent?.name)
-
-  // if (hoveredObject && hoveredObject !== nextHovered) {
-  //   const previousInitialScale = hoveredObject.userData.initialScale
-  //   if (previousInitialScale) {
-  //     hoveredObject.scale.copy(previousInitialScale)
-  //   }
-  // }
 
   if (hoveredObject && hoveredObject !== nextHovered) {
     const previousInitialScale = hoveredObject.userData.initialScale as
@@ -182,15 +169,6 @@ function updateHoverState() {
   }
 
   hoveredObject = nextHovered ?? null
-
-  // if (hoveredObject) {
-  //   const initialScale = hoveredObject.userData.initialScale
-  //   if (initialScale) {
-  //     hoveredObject.scale.set(initialScale.x * 1.15, initialScale.y * 1.15, initialScale.z * 1.15)
-  //     document.body.style.cursor = 'pointer'
-  //     return
-  //   }
-  // }
 
   if (hoveredObject) {
     const initialScale = hoveredObject.userData.initialScale as
@@ -213,74 +191,35 @@ function updateHoverState() {
 
 function handleRaycastClick() {
   raycaster.setFromCamera(pointer, camera)
-  // const hits = raycaster.intersectObjects(raycastTargets, false)
   const hits = raycaster.intersectObjects(raycastTargets, true)
 
   const firstHit = hits[0]
   if (!firstHit) return
 
-  // const obj = firstHit.object as Mesh
   const obj = getClickableRoot(firstHit.object as Object3D | undefined)
   const url = obj?.userData.linkUrl as string | undefined
 
-  // for (const [namePart, url] of Object.entries(socialLinks)) {
-  //   if (obj.name.includes(namePart)) {
-  //     openExternal(url)
-  //     return
-  //   }
-  // }
-  // const url = (obj.userData.linkUrl as string | undefined) ?? resolveLinkFromObject(obj)
 if (url) {
   openExternal(url)
 }
 
 }
 
-// const modelUrl = new URL('models/Room_Portfolio.glb', import.meta.env.BASE_URL).toString()
-// const modelUrl = publicPath('models/Room_Portfolio.glb')
 gltfLoader.load(modelUrl, (glb) => {
   glb.scene.traverse((child) => {
     const mesh = child as Mesh
     if (!mesh.isMesh) return
 
     // Fenster-Objekt mit Glasmaterial versehen:
-    // Passe die Namensprüfung an den exakten Mesh-Namen in deinem Modell an.
     if (
-      // mesh.name.includes('Window') ||
-      // mesh.name.includes('Fenster') ||
       mesh.name.includes('Glass')
     ) {
       mesh.material = glassMaterial
     }
 
-    // Klickbare / hoverbare Objekte definieren
-    // const isSocialObject = Object.keys(socialLinks).some((key) =>
-    //   mesh.name.includes(key)
-    // )
-
-    // console.log('mesh:', mesh.name, 'isSocialObject:', isSocialObject)
-
-    // if (isSocialObject) {
-    //   mesh.userData.initialScale = mesh.scale.clone()
-    //   raycastTargets.push(mesh)
-    // }
-
     const linkUrl = resolveLinkFromObject(mesh)
     const clickableRoot = getClickableRoot(mesh)
 const isSocialObject = Boolean(linkUrl)
-
-// console.log(
-//       'mesh:',
-//       mesh.name,
-//       'parent:',
-//       mesh.parent?.name,
-//       'root:',
-//       clickableRoot?.name,
-//       'isSocialObject:',
-//       isSocialObject,
-//       'linkUrl:',
-//       linkUrl
-//     )
 
 if (isSocialObject && linkUrl && clickableRoot) {
       clickableRoot.userData.initialScale = clickableRoot.scale.clone()
@@ -441,77 +380,3 @@ onUnmounted(() => {
     80%{background-position:0%  50%, 50%  50%,100% 100%}
 }
 </style>
-
-
-
-<!-- <script setup lang="ts">
-import {Scene, PerspectiveCamera, Mesh, SphereGeometry, MeshBasicMaterial, WebGLRenderer} from 'three';
-import type { Ref } from 'vue';
-import { useWindowSize } from '@vueuse/core';
-
-// import * as THREE from 'three';
-// THREE.Scene = Scene;
-let renderer: WebGLRenderer;
-const experience: Ref<HTMLCanvasElement | null> = ref(null);
-
-const { width, height } = useWindowSize();
-const aspectRatio = computed(() => width.value / height.value);
-
-const scene = new Scene();
-
-// const width = 800;
-// const height = 600;
-
-// const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const camera = new PerspectiveCamera(75, aspectRatio.value, 0.1, 1000);
-camera.position.set(0, 0, 2);
-
-scene.add(camera);
-
-const sphere = new Mesh(
-    new SphereGeometry(1, 32, 32),
-    new MeshBasicMaterial({color: 0x008080})
-);
-scene.add(sphere);
-function updateCamera() {
-    camera.aspect = aspectRatio.value;
-    camera.updateProjectionMatrix();
-}
-
-function updateRenderer() {
-    if (!renderer) return;
-    renderer.setSize(width.value, height.value)
-    renderer.render(scene, camera)
-}
-
-function setRenderer() {
-    if(experience.value) {
-        renderer = new WebGLRenderer({ canvas: experience.value });
-        updateRenderer();
-    }
-}
-
-watch(aspectRatio, () => {
-    updateCamera();
-    updateRenderer();
-});
-
-onMounted (() => {
-    setRenderer();
-    loop();
-});
-
-const loop = () => {
-    sphere.position.x += 0.01;
-    renderer.render(scene, camera);
-    requestAnimationFrame(loop);
-};
-
-loop();
-</script>
-
-<template>
-  <div>
-    <canvas ref="experience" />
-  </div>
-</template> -->

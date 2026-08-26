@@ -37,7 +37,6 @@
 
 <style scoped>
     #body-aboutMe {
-        /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='36' height='36' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M27-12.5h18c1.94 0 3.5 1.561 3.5 3.5V9c0 1.94-1.56 3.5-3.5 3.5H27A3.492 3.492 0 0123.5 9V-9c0-1.938 1.562-3.5 3.5-3.5zm-36 0H9c1.94 0 3.5 1.561 3.5 3.5V9c0 1.94-1.56 3.5-3.5 3.5H-9A3.492 3.492 0 01-12.5 9V-9c0-1.938 1.562-3.5 3.5-3.5zm0 36.001H9c1.94 0 3.5 1.561 3.5 3.5v18c0 1.94-1.56 3.5-3.5 3.5H-9c-1.938 0-3.5-1.56-3.5-3.5v-18c0-1.939 1.562-3.5 3.5-3.5zm18-18h18c1.94 0 3.5 1.56 3.5 3.5v18c0 1.939-1.56 3.5-3.5 3.5H9c-1.938 0-3.5-1.561-3.5-3.5V9c0-1.94 1.562-3.5 3.5-3.5zm18 18h18c1.94 0 3.5 1.561 3.5 3.5v18c0 1.94-1.56 3.5-3.5 3.5H27c-1.938 0-3.5-1.56-3.5-3.5v-18c0-1.939 1.562-3.5 3.5-3.5z'  stroke-linecap='square' stroke-width='1' stroke='hsla(122, 24%, 72%, 1)' fill='none'/><path class='st79' d='M12.564 15.389a9.631 9.631 0 002.824-2.825h5.225a9.631 9.631 0 002.825 2.825v5.224a9.631 9.631 0 00-2.825 2.825h-5.225a9.631 9.631 0 00-2.824-2.825v-2.612z'   stroke-linecap='square' stroke-width='1' stroke='hsla(122, 24%, 72%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
         background-image: url('/images/square_round_background.svg');
     }
 
@@ -101,7 +100,6 @@
         display: flex;
         justify-content: center;
         width: 20vw;
-        /* margin: 0 auto; */
         margin: 0;
         margin-bottom: 1em;
         transition: all 0.5s;
@@ -115,7 +113,6 @@
     }
     .portfoliobutton span:after {
         content: '»';
-        /* content: '\27A4'; */
         position: absolute;
         opacity: 0;
         top: 0;
@@ -136,7 +133,6 @@
     #aboutmebuttons {
         display: flex;
         justify-content: center;
-        /* margin-bottom: 2em; */
         gap: 10vw;
         margin: 0 auto;
     }

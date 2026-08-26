@@ -6,8 +6,6 @@ useHead({ title: 'ALLES KLARA. - 3D-Raum' })
   <div class="page">
     <ClientOnly>
       <TheExperience />
-      <!-- <TheExperienceSooah /> -->
     </ClientOnly>
-    <!-- <TheExperience /> -->
   </div>
 </template>

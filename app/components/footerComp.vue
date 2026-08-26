@@ -3,7 +3,6 @@
         <div class="footertext">
             <NuxtLink to="/imprint">Impressum</NuxtLink>
             <NuxtLink to="/data_protection">Datenschutz</NuxtLink>
-            <!-- <a href="datenschutz.html">Datenschutz</a> -->
             <a href="kontakt.html">Kontakt</a>
         </div>
         <div class="linkimage">
@@ -21,45 +20,17 @@
             <span id="date">Datum:</span> {{ formattedDate }}
         </div>
     </footer>
-    <!-- <footer>
-        <a href="">Impressum</a>
-        <a href="">Datenschutz</a>
-    </footer> -->
 </template>
 
 <script setup>
-// Datum/Jahr im Script-Block berechnen statt document.write im Template
 const now = new Date()
 const currentYear = now.getFullYear()
 const options = { year: 'numeric', month: 'short', day: 'numeric' }
 const formattedDate = now.toLocaleDateString('de-DE', options)
 const config = useRuntimeConfig()
 const baseURL = config.app.baseURL
-
-// Importiere Icons damit Vite/Nuxt die URLs korrekt auflöst
-// import instDefault from '~/assets/images/icon_instagram.png'
-// import instHover from '~/assets/images/icon_instagram_hover_salmon.PNG'
-// import discDefault from '~/assets/images/icon_discord.png'
-// import discHover from '~/assets/images/icon_discord_hover_salmon.PNG'
-// import pinDefault from '~/assets/images/icon_pinterest.png'
-// import pinHover from '~/assets/images/icon_pinterest_hover_salmon.PNG'
-
-// Bild-Handler: setze src je nach Zustand (hover/default) mit aufgelösten Import-URLs
 const imageMap = {
-    // i: {
-    //     default: instDefault,
-    //     hover: instHover
-    // },
-    // d: {
-    //     default: discDefault,
-    //     hover: discHover
-    // },
-    // p: {
-    //     default: pinDefault,
-    //     hover: pinHover
-    // }
     i: {
-        // default: `${baseURL}/images/icons/icon_instagram.png`,
         default: `${baseURL}/images/icons/icon_instagram.png`,
         hover: `${baseURL}/images/icons/icon_instagram_hover_salmon.PNG`,
     },
@@ -102,7 +73,7 @@ function onImgMouseOut(service, event) {
 #footer {
     background: #606e40;
     height: 200px;
-    margin-top: auto; /* Push the footer to the bottom */
+    margin-top: auto; 
 }
 .footer {
     display: grid;
@@ -125,8 +96,6 @@ function onImgMouseOut(service, event) {
 } 
 .footertext a:hover {
     color: #e9967a;
-    /* color: #8b7529;
-    color: #C6F0FF; */
 }
 .linkimage {
     display: flex;
@@ -153,21 +122,4 @@ function onImgMouseOut(service, event) {
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Footer ende*/
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-/* footer {
-    background: #eee9e5;
-    color: #26291fff;
-    padding: 1em 5vw;
-    display: flex;
-    justify-content: flex-start;
-    gap: 2em;
-    margin-top: auto;
-}
-footer a {
-    color: #26291fff;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-} */
 </style>

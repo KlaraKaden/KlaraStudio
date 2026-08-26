@@ -49,13 +49,11 @@
             </article>
 
             <NuxtLink to="/pearl" class="articlelink">
-            <!-- <a class="articlelink" href="pearl.html"> -->
                 <article class="portfolio-theme">
                     <div>
                         <h2>Projekt Pearl <i class="fa fa-angle-right"></i></h2>
                     </div>
                 </article>
-            <!-- </a> -->
             </NuxtLink>
 
             <NuxtLink to="/animation" class="articlelink">
@@ -120,7 +118,6 @@ useHead({ title: 'ALLES KLARA. - Portfolio' })
 
 import { onMounted, onBeforeUnmount } from 'vue'
 
-// Import assets so Vite/Nuxt resolves them correctly at build/runtime
 import vorspannVideo from '~/assets/videos/Vorspann_Musik_4_Regen.mp4'
 import vorspannPoster from '~/assets/images/poster/Vorspann_Poster.jpeg'
 import filmprojektVideo from '~/assets/videos/Filmprojekt_dreamers.mp4'
@@ -195,7 +192,6 @@ onBeforeUnmount(() => {
 
 <style scoped>
     #body-portfolio {
-            /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='72' height='43.875' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='m14.296 7.185 7.236 7.234L36.002-.048l14.47 14.47 7.236-7.233L36-14.518Zm-7.275 7.251 7.258 7.26 7.259-7.26-7.258-7.259zm-28.798 14.76 7.237 7.237L-.023 21.916 14.452 36.39l7.26-7.258L0 7.42Zm50.746 7.193-7.258-7.258-7.26 7.258 7.26 7.26zm57.568.046 7.24-7.238L72 7.42 50.282 29.137l7.259 7.259L72.02 21.918Zm-28.993-.042-7.26-7.258-7.258 7.258 7.26 7.26zm.233 14.742L36 29.358 14.223 51.135l7.258 7.258L36 43.875l14.518 14.517ZM50.453 14.45l7.259 7.26 7.258-7.26-7.258-7.257z'  stroke-width='1' stroke='hsla(122, 24%, 72%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-0.75)' fill='url(%23a)'/></svg>"); */
             background-image: url('/images/diamonds_background.svg');
         }
 
@@ -205,16 +201,13 @@ onBeforeUnmount(() => {
             box-sizing: border-box;
             margin-top: 165px;
     }
-    /* .container {
-        margin-top: 70px;
-    } */
 
     .container .headingportfolio {
             width: 65%;
             padding-bottom: 50px;
             align-items: center;
             text-align: center;
-            margin: 0 auto; /* center the 65% wide heading container */
+            margin: 0 auto;
     }
 
     .container .headingportfolio h3 {
@@ -225,48 +218,7 @@ onBeforeUnmount(() => {
             font-family: PlayfairDisplay;
             color: #750000;
     }
-    /* .portfolio-theme {
-            background-color: #EB933B;
-            padding: 2em;
-            display: flex;
-            justify-content: space-between;
-            border-radius: 10px;
-            margin: 3em;
-            margin-bottom: 2em;
-    }
-    .portfolio-theme h2 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 4.5rem;
-            color: #750000;
-            margin-top: 0.2em;
-            margin-bottom: 0.5em;
-    }
-    a .portfolio-theme div h2:hover {
-            color: #738c39;
-    }
-
-    .portfolio-theme div p {
-            margin-top: 30px;
-            margin-left: 3em;
-            padding: 3px 6px;
-            width: 50vw;
-            font-size: 25px;
-            color: #750000;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-    .portfolio-theme img {
-            border-radius: 10px;
-            object-fit: cover;
-            height: auto;
-            cursor: pointer;
-            width: 22%;
-    }
-    .portfolio-theme video {
-            border-radius: 10px;
-            width: 33%;
-            height: auto;
-            align-self: center;
-    } */
+    
     .portfolio-theme .wide-picture {
             border-radius: 10px;
             object-fit: cover;
@@ -319,26 +271,6 @@ onBeforeUnmount(() => {
             border-radius: 5px;
     }
 
-    /* .portfolio-heading {
-            font-size: 5vw;
-            font-weight: bolder;
-            padding-bottom: 10px;
-            font-family: Salsa;
-            color: #750000;
-            text-align: left;
-            font-style: normal;
-            margin: 1em 0;
-            margin-left: 0.7em;
-            margin-bottom: 0.5em;
-            padding: 0;
-    }
-
-    .informationtext {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 1.5em;
-            margin: 0.5em 4em;
-            color: #3f0a0a;
-    } */
     body.noscroll {
             overflow: hidden;
     }
@@ -355,12 +287,6 @@ onBeforeUnmount(() => {
     #experiencebutton {
     text-decoration: none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    /* font-size: 50px; */
-    /* background-color: #a5b575; */
-    /* color: #5e8d3b; */
-    /* padding: 20px;
-    width: 100%;
-    border-radius: 10px;   */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -380,7 +306,5 @@ onBeforeUnmount(() => {
 #experiencebutton img {
   height: 100px;
   width: auto;
-  /* margin-top: 1em;
-  margin-bottom: 2em; */
 }
 </style>
