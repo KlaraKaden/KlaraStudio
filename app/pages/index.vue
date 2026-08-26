@@ -33,7 +33,7 @@
             </div>
           </div>
           <NuxtLink :to="{ path: '/3DRoom' }" id="experiencebutton">
-            <img src="assets/images/Icon_Room.PNG" alt="Raumumriss">
+            <img src="${baseURL}/images/icons/Icon_Room.PNG" alt="Raumumriss">
             3D Raum
           </NuxtLink>
         </main>

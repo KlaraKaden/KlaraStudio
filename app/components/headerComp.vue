@@ -25,7 +25,7 @@
     <header>
         <NuxtLink to="/" id="title-a"><div id="title"><b>ALLES KLARA.</b></div></NuxtLink>
         <NuxtLink :to="{ path: '/3DRoom' }" id="PortfolioRoom">
-            <img src="assets/images/Icon_Room.PNG" alt="Raumumriss">
+            <img src="${baseURL}/images/icons/Icon_Room.PNG" alt="Raumumriss">
           </NuxtLink>
         <div>
             <!-- <nav>
