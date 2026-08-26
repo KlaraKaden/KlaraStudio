@@ -8,7 +8,7 @@
             </div>
 
              <NuxtLink :to="{ path: '/3DRoom' }" id="experiencebutton"  class="portfolio-theme">
-            <img src="${baseURL}/images/icons/Icon_Room.PNG" alt="Raumumriss">
+            <img src="/images/icons/Icon_Room.PNG" alt="Raumumriss">
             <p>Probier den 3D Raum!</p>
           </NuxtLink>
 
