@@ -59,6 +59,7 @@ const imageMap = {
     //     hover: pinHover
     // }
     i: {
+        // default: `${baseURL}/images/icons/icon_instagram.png`,
         default: `${baseURL}/images/icons/icon_instagram.png`,
         hover: `${baseURL}/images/icons/icon_instagram_hover_salmon.PNG`,
     },

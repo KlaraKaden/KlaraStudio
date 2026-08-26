@@ -37,6 +37,7 @@ scene.add(ambientLight)
 
 const { baseURL } = useRuntimeConfig().app
 const modelUrl = `${baseURL}models/Room_Portfolio.glb`
+// const modelUrl = `models/Room_Portfolio.glb`
 
 // const dracoLoader = new DRACOLoader()
 // dracoLoader.setDecoderPath('/draco/')
@@ -69,16 +70,16 @@ const raycastTargets: Object3D[] = []
 const socialLinks: Record<string, string> = {
   TV: '/portfolio#naturdoku',
   PictureFrames: 'https://youtu.be/AB6sulUMRGE',
-  videoediting: '/portfolio#videoschnitt',
-  vhs: '/pearl#rundesObst',
-  game: '/portfolio#game',
-  movieposter: '/portfolio#filmplakat',
-  opening: '/portfolio#vorspann',
-  animations: '/animation#animationpractice',
-  cooking: '/recipe_overview',
-  camera: '/gallery',
-  animationcat: '/animation#catouflage',
-  jewelry: '/pearl#schmuck',
+  videoediting: `${baseURL}portfolio#videoschnitt`,
+  vhs: `${baseURL}pearl#rundesObst`,
+  game: `${baseURL}portfolio#game`,
+  movieposter: `${baseURL}portfolio#filmplakat`,
+  opening: `${baseURL}portfolio#vorspann`,
+  animations: `${baseURL}animation#animationpractice`,
+  cooking: `${baseURL}recipe_overview`,
+  camera: `${baseURL}gallery`,
+  animationcat: `${baseURL}animation#catouflage`,
+  jewelry: `${baseURL}pearl#schmuck`,
 }
 const normalizedSocialLinks = Object.entries(socialLinks).map(([namePart, url]) => [
 namePart.toLowerCase(),
