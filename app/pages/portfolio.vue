@@ -7,7 +7,38 @@
                 </div>
             </div>
 
-            <article class="portfolio-theme">
+             <NuxtLink :to="{ path: '/3DRoom' }" id="experiencebutton"  class="portfolio-theme">
+            <img src="assets/images/Icon_Room.PNG" alt="Raumumriss">
+            <p>Probier den 3D Raum!</p>
+          </NuxtLink>
+
+            <article class="portfolio-theme" id="game">
+                <div>
+                    <h2>SheepNShapes</h2>
+                    <p>Über zwei Semester hinweg habe ich zusammen mit 3 anderen Kommilitoninnen ein Videospiel entwickelt. 
+                        Es ist sowohl auf dem PC als auch auf dem Handy spielbar.
+                        Kannst du es schaffen das Schaf zu retten?
+                        <br><br><NuxtLink to="https://sheepnshapes.github.io" class="gamebutton"><span>Spiele es!</span></NuxtLink>
+                    </p>
+                    
+                </div>
+                <img src="assets/images/Game_Cover.png" alt="Titelbild vom Spiel SheepNShapes" class="wide-picture thumbnail" />
+            </article>
+            
+            <article class="portfolio-theme" id="naturdoku">
+                <div>
+                    <h2>Naturdokumentation</h2>
+                    <p>Aufgabe war es, eine Dokumentation zu filmen. 
+                        Ich wollte gerne mein Makroobjektiv für mein Handy verwenden, weil ich den Stil damit aufgenommenen Bilder liebe.
+                        Sie geben einen Einblick in die winzige Welt der Natur, die wir sonst leicht übersehen.
+                    </p>
+                </div>
+                <video width="700" :poster="DokuPoster" controls>
+                    <source :src="DokuVideo" />
+                </video>
+            </article>
+            
+            <article class="portfolio-theme" id="vorspann">
                 <div>
                     <h2>Vorspann</h2>
                     <p>Aufgabe war es, einen Vorspann für einen imaginären Film zu erstellen.</p>
@@ -21,7 +52,7 @@
             <!-- <a class="articlelink" href="pearl.html"> -->
                 <article class="portfolio-theme">
                     <div>
-                        <h2>Projekt Perl <i class="fa fa-angle-right"></i></h2>
+                        <h2>Projekt Pearl <i class="fa fa-angle-right"></i></h2>
                     </div>
                 </article>
             <!-- </a> -->
@@ -35,7 +66,7 @@
                 </article>
             </NuxtLink>
 
-            <article class="portfolio-theme">
+            <article class="portfolio-theme" id="blender">
                 <div>
                     <h2>Blender</h2>
                     <p>Aufgabe war es, einen Isometric Room in Blender zu erstellen. Darunter versteht man, einen Raum
@@ -44,7 +75,7 @@
                 <img src="assets/images/isometric_room.png" alt="Isometric room in Blender" class="wide-picture thumbnail" />
             </article>
 
-            <article class="portfolio-theme">
+            <article class="portfolio-theme" id="filmplakat">
                 <div>
                     <h2>Filmplakat</h2>
                     <p>Aufgabe war es, ein Filmplakat für einen imaginären oder schon vorhandenen Film zu erstellen.
@@ -54,7 +85,7 @@
                 <img src="assets/images/Filmplakat.png" alt="Eigen erstelltes Filmplakat zu Bohemian Rhapsody" class="thumbnail" />
             </article>
 
-            <article class="portfolio-theme">
+            <article class="portfolio-theme" id="videoschnitt">
                 <div>
                     <h2>Videoschnitt</h2>
                     <p>Aufgabe war es, als Gruppe einen Film zu drehen mit verschiedenen Kameraführungen.
@@ -84,6 +115,8 @@ import vorspannVideo from '~/assets/videos/Vorspann_Musik_4_Regen.mp4'
 import vorspannPoster from '~/assets/images/poster/Vorspann_Poster.jpeg'
 import filmprojektVideo from '~/assets/videos/Filmprojekt_dreamers.mp4'
 import videoschnittPoster from '~/assets/images/poster/Videoschnitt_Poster.png'
+import DokuVideo from '~/assets/videos/Naturdoku_Farbtakt.mp4'
+import DokuPoster from '~/assets/images/poster/Farbtakt_Poster.png'
 
 function preventScroll(e) { e.preventDefault() }
 
@@ -299,4 +332,45 @@ onBeforeUnmount(() => {
     body.noscroll {
             overflow: hidden;
     }
+
+    .gamebutton span {
+        text-decoration: underline;
+        font-size: 30px;
+        color: #750000;
+    }
+    .gamebutton span:hover {
+        color: #738c39;
+    }
+
+    #experiencebutton {
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* font-size: 50px; */
+    /* background-color: #a5b575; */
+    /* color: #5e8d3b; */
+    /* padding: 20px;
+    width: 100%;
+    border-radius: 10px;   */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 0.5em 2em;
+    margin-top: 1em;
+    background-color: #C0A85F;
+}
+#experiencebutton p {
+    font-size: 30px;
+    color: #750000;
+}
+#experiencebutton:hover {
+    background-color:  #a5b575;
+}
+#experiencebutton img {
+  height: 100px;
+  width: auto;
+  /* margin-top: 1em;
+  margin-bottom: 2em; */
+}
 </style>

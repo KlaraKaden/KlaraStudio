@@ -67,18 +67,18 @@ const pointer = new Vector2()
 // const raycastTargets: Mesh[] = []
 const raycastTargets: Object3D[] = []
 const socialLinks: Record<string, string> = {
-  TV: 'https://github.com/andrewwoan/sooahkimsfolio',
+  TV: '/portfolio#naturdoku',
   PictureFrames: 'https://youtu.be/AB6sulUMRGE',
-  videoediting: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
-  vhs: 'https://klarakaden.github.io/AllesKlara/pearl.html',
-  game: 'https://sheepnshapes.github.io',
-  movieposter: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
-  opening: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
-  animations: 'https://klarakaden.github.io/AllesKlara/animation.html',
-  cooking: 'https://klarakaden.github.io/AllesKlara/recipe_overview.html?filterrecipe=allerezepte',
-  camera: 'https://github.com/andrewwoan/sooahkimsfolio',
-  animationcat: 'https://klarakaden.github.io/AllesKlara/portfolio.html',
-  jewelry: 'https://klarakaden.github.io/AllesKlara/pearl.html',
+  videoediting: '/portfolio#videoschnitt',
+  vhs: '/pearl#rundesObst',
+  game: '/portfolio#game',
+  movieposter: '/portfolio#filmplakat',
+  opening: '/portfolio#vorspann',
+  animations: '/animation#animationpractice',
+  cooking: '/recipe_overview',
+  camera: '/gallery',
+  animationcat: '/animation#catouflage',
+  jewelry: '/pearl#schmuck',
 }
 const normalizedSocialLinks = Object.entries(socialLinks).map(([namePart, url]) => [
 namePart.toLowerCase(),
@@ -358,10 +358,10 @@ onUnmounted(() => {
 
 
 <template>
-  <NuxtLink :to="{ path: '/' }" id="homebutton">Home</NuxtLink>
+  <NuxtLink :to="{ path: '/' }" id="homebutton"><i class='fas fa-home' style="font-size: 30px"></i></NuxtLink>
   <div id="experience">
     <div v-if="!isModelLoaded" id="loading-screen">
-      <div class="loading-text">Loading...</div>
+      <div class="loading-text">Loading <div class="loader"></div></div>
     </div>
 
     <canvas ref="experience" id="experience-canvas"></canvas>
@@ -400,22 +400,44 @@ onUnmounted(() => {
 
 .loading-text {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 24px;
-  color: #7b4d29;
+  font-size: 50px;
+  color: #5e8d3b;
 }
 
 #homebutton {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 40px;
+    left: 40px;
     z-index: 1000;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
-    background-color: #decf91;
-    color: #7b4d29;
+    background-color: #a5b575;
+    color: #5e8d3b;
     padding: 10px 20px;
     border-radius: 5px;
+}
+#homebutton:hover {
+    background-color: #bac793;
+}
+
+.loader {
+  width: 40px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#5e8d3b 90%,#5f8d3b00);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+  display: inline-block;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
 }
 </style>
 

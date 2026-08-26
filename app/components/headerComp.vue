@@ -24,6 +24,9 @@
     </header> -->
     <header>
         <NuxtLink to="/" id="title-a"><div id="title"><b>ALLES KLARA.</b></div></NuxtLink>
+        <NuxtLink :to="{ path: '/3DRoom' }" id="PortfolioRoom">
+            <img src="assets/images/Icon_Room.PNG" alt="Raumumriss">
+          </NuxtLink>
         <div>
             <!-- <nav>
                 <ul class="navigationbar">
@@ -137,6 +140,19 @@ header a {
 }
 header {
     background-color: darkseagreen;
+}
+#PortfolioRoom {
+    position: absolute;
+    top: 65px;
+    right: 65px;
+}
+#PortfolioRoom img {
+    height: 100px;
+  width: auto;
+}
+#PortfolioRoom:hover img {
+    transform: scale(1.2);
+    /* transition: transform 0.3s ease-in-out; */
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Seitenüberschrift/Titel Ende*/

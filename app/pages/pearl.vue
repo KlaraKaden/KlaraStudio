@@ -6,7 +6,7 @@
             <p class="informationtext">In den ersten Stunden unseres Studiums - als Sprung ins kalte Wasser - war unsere Aufgabe, Ideen für ein Produkt namens "Pearl" zu finden. 
                 Zu zwei dieser Ideen sollten wir jeweils ein Werbevideo drehen.
             </p>
-            <article class="portfolio-theme">
+            <article class="portfolio-theme" id="rundesObst">
                 <div>
                     <h2>Rundes Obst</h2>
                     <p>Eine Idee meiner Gruppe war das runde Obst der Marke Pearl. Das Storyboard war weniger ausgearbeitet als 
@@ -20,7 +20,7 @@
                 </video>
             </article>
 
-            <article class="portfolio-theme">
+            <article class="portfolio-theme" id="schmuck">
                 <div>
                     <h2>Schmuck</h2>
                     <p>Die zweite Idee meiner Gruppe war Perlenschmuck der Marke Pearl. 

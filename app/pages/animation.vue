@@ -6,7 +6,19 @@
         <p class="informationtext">Um die Animationsprinzipien zu üben und erste Berührungspunkte mit Animationen zu haben, 
             sollten wir verschiedenen kleine Animationen zeichnen.
         </p>
-        <article class="portfolio-theme">
+
+        <article class="portfolio-theme" id="catouflage">
+            <div>
+                <h2>Catouflage</h2>
+                <p>Der kleine Animationsfilm verfolgt eine Katze auf ihrem Weg. 
+                    Vielleicht bietet es ja eine mögliche Erklärung wie Katzen sich immer unbemerkt fortbewegen können.</p>
+            </div>
+            <video width="700" :poster="catouflagePoster" controls loop>
+                <source :src="catouflageVideo" />
+            </video>
+        </article>
+
+        <article class="portfolio-theme" id="animationpractice">
             <div>
                 <h2>Morphen</h2>
                 <p>Aufgabe war es, aus dem Smiley ein anderes Objekt werden zu lassen, welches sich dann wieder zurück 
@@ -51,6 +63,8 @@
     import bouncingBallPoster from '~/assets/images/poster/bouncingBall_Poster.png'
     import walkingVideo from '~/assets/videos/walking_busch_unscharf_ton.mp4'
     import walkingPoster from '~/assets/images/poster/walking_Poster.png'
+    import catouflageVideo from '~/assets/videos/Animationsfilm_Catouflage.mp4'
+    import catouflagePoster from '~/assets/images/poster/Catouflage_Poster2.png'
 </script>
 
 <style scoped>
