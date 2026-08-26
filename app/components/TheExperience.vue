@@ -68,8 +68,8 @@ const pointer = new Vector2()
 // const raycastTargets: Mesh[] = []
 const raycastTargets: Object3D[] = []
 const socialLinks: Record<string, string> = {
-  TV: '/portfolio#naturdoku',
-  PictureFrames: 'https://youtu.be/AB6sulUMRGE',
+  TV: `${baseURL}portfolio#naturdoku`,
+  PictureFrames: `${baseURL}kunst`,
   videoediting: `${baseURL}portfolio#videoschnitt`,
   vhs: `${baseURL}pearl#rundesObst`,
   game: `${baseURL}portfolio#game`,

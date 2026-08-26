@@ -10,7 +10,7 @@
 </template> -->
 
 <script setup>
-    useHead({ title: 'ALLES KLARA. - Home' })
+    useHead({ title: 'ALLES KLARA.' })
 </script>
 <template>
     <div id="body-index">

@@ -95,6 +95,14 @@
                     <source :src="filmprojektVideo" />
                 </video>
             </article>
+
+            <NuxtLink to="/kunst" class="articlelink">
+                <article class="portfolio-theme">
+                    <div>
+                        <h2>Eigene Kunst <i class="fa fa-angle-right"></i></h2>
+                    </div>
+                </article>
+            </NuxtLink>
         </main>
     </div>
 
@@ -108,6 +116,8 @@
 </template>
 
 <script setup>
+useHead({ title: 'ALLES KLARA. - Portfolio' })
+
 import { onMounted, onBeforeUnmount } from 'vue'
 
 // Import assets so Vite/Nuxt resolves them correctly at build/runtime

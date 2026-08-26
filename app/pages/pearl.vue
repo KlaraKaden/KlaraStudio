@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
+    useHead({ title: 'ALLES KLARA. - Pearl' })
+
     import rundesObstposter from '~/assets/images/poster/Pearl-rundes_Obst_Poster.png'
     import rundesObstvideo from '~/assets/videos/Pearl_rundes_Obst_4zu3.mp4'
     import schmuckposter from '~/assets/images/poster/Pearl-Schmuck_Poster.png'

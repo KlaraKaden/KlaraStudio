@@ -245,7 +245,7 @@ const { topFunction } = useScrollTop({ buttonSelector: '#topBtn', footerSelector
 // import { onMounted, onBeforeUnmount, ref, watch } from 'vue'
 // import { useHead, useRoute } from '#imports'
 
-useHead({ title: 'ALLES KLARA. - Gallery' })
+useHead({ title: 'ALLES KLARA. - Fotogalerie' })
 
 // // Access route query to receive filter from header links
 // const route = useRoute()

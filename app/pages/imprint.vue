@@ -1,5 +1,5 @@
 <script setup>
-    useHead({ title: 'ALLES KLARA. - Imprint' })
+    useHead({ title: 'ALLES KLARA. - Impressum' })
 </script>
 <template>
     <!-- <main id="main-imprint">

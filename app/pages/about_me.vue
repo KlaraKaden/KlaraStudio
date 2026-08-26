@@ -1,5 +1,5 @@
 <script setup>
-    useHead({ title: 'ALLES KLARA. - About Me' })
+    useHead({ title: 'ALLES KLARA. - Über mich' })
 </script>
 <template>
     <div id="body-aboutMe">

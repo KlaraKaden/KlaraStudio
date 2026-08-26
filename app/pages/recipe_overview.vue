@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-useHead({ title: 'ALLES KLARA. - Recipe Overview' })
+useHead({ title: 'ALLES KLARA. - Rezepte' })
 
 import fallbackImg from '~/assets/images/Bild_folgt.png'
 import useScrollTop from '../../composables/useScrollTop'

@@ -1,5 +1,5 @@
 <script setup>
-    useHead({ title: 'ALLES KLARA. - Data Protection' })
+    useHead({ title: 'ALLES KLARA. - Datenschutz' })
 </script>
 <template>
   <div id="body-data-protection">
