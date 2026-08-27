@@ -52,6 +52,11 @@
           </template>
         </div>
       </div>
+        <div id="Anmerkung" v-if="recipe.note">
+            <h2>Anmerkung</h2>
+            <!-- <p>{{ recipe.note }}</p> -->
+             <div v-html="renderMarkdown(recipe.note)"></div>
+        </div>
     </main>
 
     <div v-else>
@@ -79,6 +84,7 @@ type Recipe = {
   ingredients?: string[]
   steps?: string[]
   categories?: string[]
+  note?: string
 }
 
 const config = useRuntimeConfig()
@@ -136,16 +142,26 @@ const { data: recipeData } = await useAsyncData<Recipe | null>(() =>
 
 const recipe = recipeData
 
+// function isHeading(s?: string) {
+//   if (!s) return false
+//   return /^#{1,6}\s+/.test(s) || /:\s*$/.test(s)
+// }
+
+// function getHeadingText(s?: string) {
+//   if (!s) return ''
+//   const m = s.match(/^#{1,6}\s+(.*)$/)
+//   if (m?.[1]) return m[1]
+//   return s.replace(/:\s*$/, '')
+// }
+
 function isHeading(s?: string) {
   if (!s) return false
-  return /^#{1,6}\s+/.test(s) || /:\s*$/.test(s)
+  return /^#{1,6}\s*/.test(s)
 }
 
 function getHeadingText(s?: string) {
   if (!s) return ''
-  const m = s.match(/^#{1,6}\s+(.*)$/)
-  if (m?.[1]) return m[1]
-  return s.replace(/:\s*$/, '')
+  return s.replace(/^#{1,6}\s*/, '').trim()
 }
 
 function escapeHtml(s: string) {
@@ -198,11 +214,28 @@ function renderMarkdown(md?: string) {
       inList = false
     }
 
-    const m = trimmed.match(/^(#{1,6})\s+(.*)$/)
-    if (m) {
-      const level = Math.min(3, m[1].length)
-      out += `<h${level}>${renderInline(m[2])}</h${level}>`
-      continue
+    // const m = trimmed.match(/^(#{1,6})\s+(.*)$/)
+    // if (m) {
+    //   const level = Math.min(3, m[1].length)
+    //   out += `<h${level}>${renderInline(m[2])}</h${level}>`
+    //   continue
+    // }
+
+    // const m = trimmed.match(/^(#{1,6})\s*(.*)$/)
+    // if (m) {
+    // const level = Math.min(3, m[1].length)
+    // out += `<h${level}>${renderInline(m[2])}</h${level}>`
+    // continue
+    // }
+
+    const headingMatch = trimmed.match(/^#{1,6}/)
+
+    if (headingMatch) {
+    const level = Math.min(3, headingMatch[0].length)
+    const text = trimmed.replace(/^#{1,6}\s*/, '')
+
+    out += `<h${level}>${renderInline(text)}</h${level}>`
+    continue
     }
 
     if (/:$/.test(trimmed)) {

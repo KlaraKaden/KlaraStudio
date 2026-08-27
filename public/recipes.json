@@ -1,157 +1,219 @@
 [
   {
-    "slug": "testrezept",
-    "title": "TestRezept",
-    "description": "Sollte jetzt keine neue Eingabe des Tokens brauchen.",
+    "slug": "japchae",
+    "title": "Japchae",
+    "description": "Japche (koreanisch: 잡채) kommt aus Korea und ist eine Art Nudelsalat aus Süßkartoffelnudeln, gebratenem Gemüse und Fleisch. Es kann als Beilage oder Hauptspeise gegessen werden und warm oder kalt serviert werden.",
     "date": "2025-11-20",
-    "image": "/uploads/testrezept.png",
-    "amount": "1 Person",
-    "time": "40 min",
-    "pdf": "",
+    "image": "/images/recipes/Japchae.jpeg",
+    "amount": "4 Portionen",
+    "time": "1 Stunde",
+    "pdf": "/images/recipes/PDF/Japchae.pdf",
     "ingredients": [
-      "1 Tasse Übung",
-      "600g GPT"
+      "500 g koreanische Glasnudeln (당면 Dangmyeon)",
+      "5 Zwiebeln",
+      "4 Möhren",
+      "400 g Blattspinat (frisch oder tiefgefroren (vorher auftauen))",
+      "4 Shitake Pilze",
+      "6 EL Sesamöl",
+      "6 EL Sojasoße",
+      "3 EL (brauner) Zucker",
+      "4 EL Sesam",
+      "#Marinade für das Fleisch",
+      "600 g Rindfleisch",
+      "4 TL Sojasoße",
+      "2 TL Sesamöl",
+      "2 TL brauner Zucker",
+      "2 TL Mirin (Reiswein)",
+      "2 Knoblauchzehe (bei Bedarf mehr)",
+      "Pfeffer"
     ],
     "steps": [
-      "Frag GPT nach Problem.",
-      "Mecker rum."
+      "#Fleisch",
+      "Fleisch in mundgerechte Stücke schneiden. Diese mit Knoblauch, Zucker, Pfeffer, Sojasoße und Sesamöl vermengen. Für ca. 60 Minuten in den Kühlschrank stellen.",
+      "#Nudeln",
+      "Nudeln nach Packungsanleitung kochen (meistens um die 6 Minuten) oder für ca. 30 Minuten in kochendem Wasser einweichen. Die Nudeln sollten durchsichtig werden und bis in die Mitte weich sein.",
+      "Die fertig gekochten Nudeln abgießen und mit der Schere zerteilen, damit sie kürzer werden. Während sie noch warm sind, mit Sojasoße, Sesamöl und Zucker würzen.",
+      "#Gemüse",
+      "Zwiebeln in kleine Spalten schneiden. Die Möhren in kleine, dünne Streifen schneiden. Eventuell Julienschneider/-raspel verwenden.",
+      "Bei frischem Spinat: Den Spinat für ca. 30 Sekunden in kochendem Wasser blanchieren. Unter kaltem Wasser abschrecken. Aus dem Spinat das Wasser herausdrücken.",
+      "Bei getrockneten Shitake Pilzen: Die Pilze in warmem Wasser quellen lassen, bis sie sich vollgesaugt haben. Unter kaltem Wasser die Pilze säubern. Die Pilze in dünne Streifen schneiden.",
+      "#Anbraten",
+      "Man kann alles in einer Pfanne nacheinander anbraten: Zwiebeln -> Möhren -> Pilze -> Spinat -> Fleisch. Eventuell zwischendrin Krümel entfernen oder etwas Öl nachschütten.",
+      "Etwas Öl in die Pfanne geben und die Zwiebeln mit einer Prise Salz anbraten. Sie sollten durchsichtig, aber nicht braun werden. Aus der Pfanne nehmen.",
+      "In etwas Öl die Möhren mit einer Prise Salz ca. 1 Minute anbraten, bis sie noch ein wenig Biss haben. Aus der Pfanne nehmen.",
+      "Die Pilze mit etwas Öl und einer Prise Salz für etwa 3 Minuten anbraten.",
+      "Den Spinat in etwas Öl und einer Prise Salz für ca. 30 Sekunden anbraten. Aus der Pfanne nehmen.",
+      "Das marinierte Fleisch in etwas Öl scharf anbraten, eventuell in mehreren kleineren Portionen. Aus der Pfanne nehmen.",
+      "#Mischen",
+      "Mixe alle gebratenen Zutaten mit den Nudeln. Mit den Händen geht das sehr einfach.",
+      "Eventuell noch abschmecken mit etwas Sojasoße (2 EL), Zucker (2 TL) und Sesamöl (1,5 EL)."
     ],
     "categories": [
-      "nudeln",
-      "kekse"
-    ]
-  },
-  {
-    "slug": "erdbeertest",
-    "title": "Erdbeertest",
-    "description": "Das ist ein Test, ob jetzt die Seitenbreite bei dem Layout stimmt.",
-    "date": "2025-11-20",
-    "image": "/uploads/erdbeertest.png",
-    "amount": "5 Stück",
-    "time": "30 min",
-    "pdf": "",
-    "ingredients": [
-      "3 Stück Erdbeeren",
-      "500g Zucker",
-      "150g Liebe",
-      "30g Glcük",
-      "1 Msp. Skill"
-    ],
-    "steps": [
-      "Das ist nur mal ein Test ob das Layout jetzt stimmt.",
-      "Wenn nicht ist das etwas doof.",
-      "Dann muss ich es nochmal überarbeiten."
-    ],
-    "categories": [
-      "torten",
-      "backen"
-    ]
-  },
-  {
-    "slug": "vanilletest",
-    "title": "VanilleTest",
-    "description": "Das ist jetzt ein erneuter Test, ob das Bearbeiten eines Rezeptes jetzt funktioniert.",
-    "date": "2025-11-21",
-    "image": "/uploads/vanilletest.png",
-    "amount": "10 Stück",
-    "time": "10 min",
-    "pdf": "",
-    "ingredients": [
-      "4 Eier",
-      "1 Prise Glück",
-      "Glasur:",
-      "eine Menge Puderzucker",
-      "bunte Streusel"
-    ],
-    "steps": [
-      "Vorbereitung:",
-      "frage CPT",
-      "Lösung:",
-      "überprüfe die Antwort",
-      "Servieren:",
-      "Sollte alles funktionieren, dann sieht man die überarbeitete Version auf der Rezeptseite"
-    ],
-    "categories": [
-      "mitkartoffeln",
-      "sosse",
       "hauptspeisen",
-      "nachspeise"
+      "salate",
+      "mitnudeln",
+      "nudeln"
     ]
   },
   {
-    "slug": "schokotest",
-    "title": "Schokotest",
-    "description": "das ist ein Test ohne Abschnitten",
+    "slug": "wurstgulasch",
+    "title": "Wurstgulasch",
+    "description": "Wurstgulasch entstand in der DDR als Alternative zu normalem Gulasch. Dabei wird Jagdwurst in einer Tomatensoße aus Tomatenmark oder Ketchup auf Nudeln serviert.",
+    "date": "2025-11-20",
+    "image": "/images/recipes/Wurstgulasch_1.jpeg",
+    "amount": "6 Portionen",
+    "time": "50 Minuten",
+    "pdf": "/images/recipes/PDF/Wurstgulasch.pdf",
+    "ingredients": [
+      "500 g Jagdwurst",
+      "1 Zwiebel",
+      "1 EL Öl",
+      "1-2 EL Tomatenmark",
+      "3 EL Ketchup",
+      "4 EL Mehl",
+      "1 Liter Wasser",
+      "gekörnte Rinderbrühe",
+      "Paprikapulver",
+      "Salz",
+      "Pfeffer"
+
+    ],
+    "steps": [
+      "#Vorbereitung",
+      "Zwiebel in kleine und die Jagdwurst in größere Würfel schneiden.",
+      "#Anbraten",
+      "Das Öl in einem Topf erhitzen und die Zwiebel darin glasig anschwitzen. Die Jagdwurst dazu geben und anbraten.",
+      "Tomatenmark und Ketchup mit in den Topf geben und auch mit anbraten. Das Mehl darüberstäuben und kurz anrösten.",
+      "#Ablöschen",
+      "Das Wasser nach und nach einrühren, damit keine Klümpchen entstehen. Zum Kochen bringen und für ca. 20 Minuten bei geringer Hitze köcheln lassen.",
+      "#Würzen",
+      "Mit Salz, Pfeffer, Paprika und gekörnter Rinderbrühe den Wurstgulasch nach Geschmack würzen.",
+      "#Servieren",
+      "Während des Kochens die Nudeln nach Packungsanleitung zubereiten. Diese dann mit dem Wurstgulasch und gern mit geriebenem Käse servieren."
+    ],
+    "categories": [
+     "hauptspeisen",
+     "fleisch",
+     "sossen",
+     "nudeln"
+    ]
+  },
+  {
+    "slug": "kartoffelsalat",
+    "title": "Kartoffelsalat",
+    "description": "Dieser Kartoffelsalat wird mit gekochten Kartoffeln, Gemüse und Mayonnaise zubereitet.",
+    "date": "2025-11-21",
+    "image": "/images/recipes/Kartoffelsalat.jpeg",
+    "amount": "6 Portionen",
+    "time": "40 Minuten",
+    "pdf": "/images/recipes/PDF/Kartoffelsalat.pdf",
+    "ingredients": [
+     "500 g Kartoffeln",
+     "saure Gurken",
+     "1 Apfel",
+     "½ Zwiebel",
+     "½ Paprika (optional)",
+     "Salz",
+     "Pfeffer",
+     "Paprikapulver",
+     "Mayonnaise nach Bedarf",
+     "1 Löffelchen Senf",
+     "Schnittlauch",
+     "Petersilie"
+    ],
+    "steps": [
+      "#Kartoffeln",
+      "Die Kartoffeln mit Schale gar kochen und nach dem Kochen schälen. Diese dann in Scheiben schneiden.",
+      "#Schnippelarbeit",
+      "Während die Kartoffeln kochen, die sauren Gurken, den Apfel, die halbe Zwiebel und die Paprika klein schneiden.",
+      "#Mischen",
+      "Alle geschnittenen Zutaten vermengen. Mayonnaise und Senf hinzugeben. (Die Mayonnaise Schritt für Schritt hinzufügen, um die Menge gut anpassen zu können.) Ebenfalls Salz, Pfeffer, Paprika, Schnittlauch und Petersilie zum Salat geben. Alles miteinander mischen.",
+      "Eventuell nochmals mit den Gewürzen abschmecken."
+    ],
+    "categories": [
+     "salate",
+     "mitkartoffeln"
+    ]
+  },
+  {
+    "slug": "senfsoße",
+    "title": "Senfsoße",
+    "description": "Die Senfsoße wird aus einer Mehlschwitze und Senf zubereitet. Sie wird zu Eiern (sächsisches Gericht \"Saure Eier\") serviert.",
+    "date": "2025-11-21",
+    "image": "/images/recipes/Senfsoße.jpeg",
+    "amount": "2 Portionen",
+    "time": "20 Minuten",
+    "pdf": "/images/recipes/PDF/Senfsoße.pdf",
+    "ingredients": [
+      "Butterschmalz (ähnliche Menge wie Mehl)",
+      "Mehl (2 EL für 500ml)",
+      "Wasser",
+      "½ TL Essig",
+      "1 Msp. Zucker",
+      "etwas gekörnte Rinderbrühe",
+      "Salz",
+      "Pfeffer",
+      "100 g Senf"
+    ],
+    "steps": [
+      "#Mehlschwitze",
+      "Das Butterschmalz schmelzen und mit dem Mehl zu einer Mehlschwitze verrühren.",
+      "#Ablöschen",
+      "Das Wasser nach und nach unter Rühren hinzugeben, damit keine Klümpchen entstehen. Dabei etwas Wasser aufheben zum Anrühren des Senfs.",
+      "Die Gewürze in die Mehlschwitze geben. Aufkochen lassen und etwas köcheln lassen zum Andicken.",
+      "#Senf",
+      "Den Senf mit dem aufgehobenen Wasser glattrühren und unter die Soße rühren. Nochmal kurz aufkochen lassen."
+    ],
+    "categories": [
+      "hauptspeisen",
+      "sossen"
+    ]
+  },
+  {
+    "slug": "brownieCookies",
+    "title": "Brownie-Cookies",
+    "description": "Die Brownie-Cookies sind außen knusprig und innen noch weich. Sie sind so schokoladig wie Brownies und klein und knusprig wie Kekse.",
     "date": "2025-11-21",
     "image": "",
-    "amount": "5 Personen",
+    "amount": "12 Stück",
     "time": "40 min",
-    "pdf": "",
+    "pdf": "/images/recipes/PDF/Brownie_Cookies.pdf",
     "ingredients": [
-      "500g Mehl",
-      "300g Wasser",
-      "5 Eier",
-      "150g Zucker"
-    ],
-    "steps": [
-      "Vorbereitung:",
-      "Mehl sieben",
-      "Eier trennen",
-      "#Teig",
-      "Mehl mit Wasser mischen",
-      "Kneten",
-      "##Backen",
-      "30 Minuten bei 180°C"
-    ],
-    "categories": [
-      "nudeln",
-      "torten"
-    ]
-  },
-  {
-    "slug": "pfirsichtest",
-    "title": "Pfirsichtest",
-    "description": "Das ein Test, ob auch bei den Zutaten Unterüberschriften funktionieren",
-    "date": "2025-11-21",
-    "image": "/uploads/pfirsichtest.jpg",
-    "amount": "20 Stück",
-    "time": "10 min",
-    "pdf": "",
-    "ingredients": [
-      "Teig:",
-      "500g Mehl",
-      "200g Zucker",
-      "100g Butter",
+      "120 g Butter",
+      "200 g Zartbitterschokolade",
+      "150 g Zucker",
+      "100 g brauner Zucker",
       "2 Eier",
-      "Glasur:",
-      "100ml Wasser",
-      "500g Puderzucker",
-      "1 Prise Zimt"
+      "1 TL Vanilleextrakt",
+      "1 Prise Salz",
+      "125 g Mehl",
+      "20 g Backkakao",
+      "1 TL Backpulver",
+      "100 g Schokoladenstücke (backfest)"
     ],
     "steps": [
-      "Vorbereitung:",
-      "Mehl sieben",
-      "Eier trennen",
-      "Teig:",
-      "Mehl mit Wasser mischen",
-      "Kneten",
-      "Backen:",
-      "30 Minuten bei 180°C"
+      "#Vorbereitung",
+      "Den Backofen auf 180°C Ober-/Unterhitze vorheizen. Zwei Backbleche mit Backpapier auslegen.",
+      "#Teig",
+      "Die Butter in einem Topf schmelzen. Von der Herdplatte nehmen und die Schokolade einrühren, bis sie vollständig geschmolzen ist.",
+      "In der Zwischenzeit den Zucker, den braunen Zucker, die Eier und das Vanilleextrakt weiß cremig schlagen. Das Mehl mit Salz, dem Kakao, Backpulver und den Schokoladenstückchen vermischen. Die Schokoladenbutter in die Eiermasse geben und unterrühren. Zum Schluss noch die trockenen Zutaten kurz untermischen, bis alles gut vermengt ist.",
+      "Den Teig mit einem Eisportionierer auf das Backblech geben. Dabei etwas mehr Platz zwischen den Keksen lassen.",
+      "#Backen",
+      "Die Kekse für 12 bis 15 Minuten backen. Nach dem Herausholen noch 10 Minuten abkühlen lassen."
     ],
     "categories": [
-      "nudeln",
-      "kekse",
-      "kuchen"
+      "backen",
+      "kekse"
     ]
   },
   {
     "slug": "nussplaetzchen",
     "title": "Nussplätzchen",
     "date": "2024-07-19",
-    "image": "/assets/images/Bild_folgt.png",
+    "image": "",
     "amount": "20 Stück",
     "time": "30 Minuten",
-    "pdf": "/recipes/PDF/Nussplaetzchen.pdf",
+    "pdf": "/images/recipes/PDF/Nussplaetzchen.pdf",
     "description": "Die Nussplätzchen sind perfekt für Weihnachten. Sie sind noch leicht weich und saftig. Der Klecks Schokolade oben drauf rundet den Geschmack ab.",
     "ingredients": [
       "125 g Haselnüsse, gemahlen",
@@ -165,11 +227,14 @@
       "200 g Schokolade"
     ],
     "steps": [
+      "#Vorbereitung",
       "Backofen auf 180 °C Umluft vorheizen. Zwei Backbleche mit Backpapier auslegen.",
-      "Haselnüsse, Mandeln, Zucker, Mehl und Zimt in einer Schüssel mischen. Butter zerlassen und dazugeben. Gut verrühren.",
-      "Eiweiße mit einer Prise Salz steif schlagen und unter die Masse heben.",
-      "Mit einem TL kleine Häufchen auf ein Backblech setzen und 10–15 Minuten goldbraun backen.",
-      "Nach dem Abkühlen auf jedes Plätzchen etwas geschmolzene Schokolade geben."
+      "#Teig",
+      "Die Haselnüsse, Mandeln, den Zucker, Mehl und Zimt in einer Schüssel mischen. Die Butter in einem Topf zerlassen und in die Mischung geben. Das Ganze gut verrühren.",
+      "Die Eiweiße mit einer Prise Salz fest aufschlagen. Den Eischnee unter die Masse heben.",
+      "Mit eine TL kleine Häufchen auf ein Backblech setzen. Dabei etwas Abstand zwischen den Keksen lassen.",
+      "#Backen",
+      "Die Kekse für 10 bis 15 Minuten goldbraun backen. Nach dem Abkühlen auf jedes Plätzchen einen TL geschmolzene Schokolade geben."
     ],
     "categories": [
       "backen",
@@ -177,35 +242,75 @@
     ]
   },
   {
-    "slug": "kirschtest",
-    "title": "Kirschtest",
-    "description": "Das ist ein Test zum probieren, ob das Erstellen eines neuen Rezeptes immer noch funktioniert.",
+    "slug": "joghurtLimettenKuchen",
+    "title": "Joghurt-Limetten-Rührkuchen",
+    "description": "Dieser Kuchen ist sehr saftig und kann sowohl in einer Gugelhupfform, einer Kastenform oder als Muffins gebacken werden..",
     "date": "2025-11-21",
-    "image": "/uploads/kirschtest.png",
-    "amount": "1 Stück",
-    "time": "50 min",
-    "pdf": "",
+    "image": "",
+    "amount": "1 Kuchenform",
+    "time": "1h 15 Min",
+    "pdf": "/images/recipes/PDF/Joghurt_Limetten_Kuchen.pdf",
     "ingredients": [
-      "300g Mehl",
-      "150ml Wasser",
-      "700g Butter",
-      "1 Msp. Muskat",
-      "Marinade:",
-      "3 Zehen Knoblauch",
-      "4 Tassen Milch"
+      "200 g Mehl",
+      "100 g Butter",
+      "120 g Zucker",
+      "3 Eier",
+      "½ Pck. Backpulver",
+      "150 g Joghurt (3,5 %)",
+      "1 EL Limettensaft"
     ],
     "steps": [
-      "Vorbereitung:",
-      "Schreibe den Text auf, was zu tun ist.",
-      "Arbeiten:",
-      "Hoffe darauf das der Code richtig ist.",
-      "Servieren:",
-      "Freue dich, wenn es funktioniert hat."
+      "#Vorbereitung",
+      "Den Backofen auf 170 °C Umluft vorheizen. Kastenform/Gugelhupfform einfetten oder ein Muffinblech mit Muffinförmchen füllen.",
+      "#Teig",
+      "Die Eier mit dem Zucker schaumig aufschlagen. Nach und nach die Butter, den Joghurt und den Limettensaft dazu rühren.",
+      "Mehl und Backpulver vermischen und unter Rühren zu der Eiermasse hinzufügen.",
+      "Den Teig in die Form füllen.",
+      "#Backen",
+      "Den Kuchen ca. 60 Minuten auf mittlerer Schiene backen. Stäbchenprobe machen, ob er durchgebacken ist.",
+      "#Verzierung",
+      "Puderzucker mit etwas Limettensaft glatt rühren und als Galsur auf den Kuchen geben."
     ],
     "categories": [
       "backen",
-      "kekse",
-      "nachspeise"
+      "kuchen"
+    ],
+    "note": "Der Kuchen kann auch in einer Kastenform oder als Muffins gebacken werden. Die Backzeit muss dann angepasst werden."
+  },
+  {
+    "slug": "brownies",
+    "title": "Brownies",
+    "description": "Die Brownies sind super saftig und schokoladig. Mehr Schokolade geht kaum!",
+    "date": "2025-11-21",
+    "image": "",
+    "amount": "10 Stück",
+    "time": "50 Minuten",
+    "pdf": "/images/recipes/PDF/Brownies.pdf",
+    "ingredients": [
+      "100 g Butter",
+      "1 Tafel Zartbitterschokolade",
+      "40 g Zucker",
+      "120 g brauner Zucker",
+      "2 Eier",
+      "1 Eigelb",
+      "80 g Mehl",
+      "3 EL Backkakao",
+      "1 Prise Salz"
+    ],
+    "steps": [
+      "#Vorbereitung",
+      "Den Backofen auf 160 °C Umluft vorheizen. Eine flache Form mit Backpapier auskleiden.",
+      "#Teig",
+      "Die Schokolade und Butter in einem Wasserbad schmelzen.",
+      "Den Zucker und braunen Zucker zugeben und gut verrühren.",
+      "Eier und Eigelb untermengen. Mehl, Backkakao und Salz zugeben und gut verrühren.",
+      "Den Teig in die Form geben.",
+      "#Backen",
+      "Die Brownies für 20 Minuten backen. Etwas abkühlen lassen."
+    ],
+    "categories": [
+      "backen",
+      "kuchen"
     ]
   }
 ]

@@ -7,9 +7,3 @@
 <script setup>
 import '~/assets/recipes.css'
 </script>
-
-<style scoped>
-.recipe-layout {
-  padding-top: 4rem;
-}
-</style>
