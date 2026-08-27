@@ -36,6 +36,12 @@ export default defineNuxtConfig({
     }
   },
 
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
+
   // css: [
   //   '~/assets/style.css',
   // ],
