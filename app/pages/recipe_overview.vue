@@ -379,6 +379,10 @@ watch(
         background-image: url('/images/square_background.svg');
         position: relative;
         width: 100%;
+        /* height: 100%; */
+        /* min-height: 61vh; */
+        flex: 1;
+        align-self: stretch;
     }
 
 

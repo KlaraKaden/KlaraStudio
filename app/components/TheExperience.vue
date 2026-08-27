@@ -197,6 +197,17 @@ function handleRaycastClick() {
   if (!firstHit) return
 
   const obj = getClickableRoot(firstHit.object as Object3D | undefined)
+
+  if (!obj) return
+
+  // Prüfen, ob das Objekt ein Modal öffnen soll
+  const modalName = findModalByName(obj.name)
+
+  if (modalName) {
+    openModal(modalName)
+    return
+  }
+
   const url = obj?.userData.linkUrl as string | undefined
 
 if (url) {
@@ -217,15 +228,30 @@ gltfLoader.load(modelUrl, (glb) => {
       mesh.material = glassMaterial
     }
 
-    const linkUrl = resolveLinkFromObject(mesh)
-    const clickableRoot = getClickableRoot(mesh)
-const isSocialObject = Boolean(linkUrl)
+//     const linkUrl = resolveLinkFromObject(mesh)
+//     const clickableRoot = getClickableRoot(mesh)
+// const isSocialObject = Boolean(linkUrl)
 
-if (isSocialObject && linkUrl && clickableRoot) {
-      clickableRoot.userData.initialScale = clickableRoot.scale.clone()
-      clickableRoot.userData.linkUrl = linkUrl
-      raycastTargets.push(clickableRoot)
-    }
+// if (isSocialObject && linkUrl && clickableRoot) {
+//       clickableRoot.userData.initialScale = clickableRoot.scale.clone()
+//       clickableRoot.userData.linkUrl = linkUrl
+//       raycastTargets.push(clickableRoot)
+//     }
+
+    const linkUrl = resolveLinkFromObject(mesh)
+const clickableRoot = getClickableRoot(mesh)
+
+const modalName = findModalByName(clickableRoot?.name)
+
+if (clickableRoot && (linkUrl || modalName)) {
+  clickableRoot.userData.initialScale = clickableRoot.scale.clone()
+
+  if (linkUrl) {
+    clickableRoot.userData.linkUrl = linkUrl
+  }
+
+  raycastTargets.push(clickableRoot)
+}
   })
 
   scene.add(glb.scene)
@@ -294,6 +320,46 @@ onUnmounted(() => {
     renderer.dispose()
   }
 })
+
+
+const activeModal = ref<string | null>(null)
+
+function openModal(modalName: string) {
+  activeModal.value = modalName
+}
+
+function closeModal() {
+  activeModal.value = null
+}
+
+const modalObjects: Record<string, string> = {
+  TV: 'tv',
+  camera: 'camera',
+  game: 'game',
+  PictureFrames: 'pictureframes',
+  videoediting: 'videoediting',
+  vhs: 'vhs',
+  movieposter: 'movieposter',
+  opening: 'opening',
+  animations: 'animations',
+  cooking: 'cooking',
+  animationcat: 'animationcat',
+  jewelry: 'jewelry',
+}
+
+function findModalByName(name?: string | null) {
+  if (!name) return null
+
+  const normalizedName = name.toLowerCase()
+
+  for (const [namePart, modalName] of Object.entries(modalObjects)) {
+    if (normalizedName.includes(namePart.toLowerCase())) {
+      return modalName
+    }
+  }
+
+  return null
+}
 </script>
 
 
@@ -305,6 +371,312 @@ onUnmounted(() => {
     </div>
 
     <canvas ref="experience" id="experience-canvas"></canvas>
+
+    <!-- Modal: TV -->
+    <div
+      v-if="activeModal === 'tv'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Naturdokumentation</h2>
+        <p>
+          Bekomme Einblicke in die winzige Welt der Natur und erlebe sie aus vielen neuen Perspektiven.
+        </p>
+        <img src="assets/images/poster/Farbtakt_Poster.png" alt="">
+        <NuxtLink :to="{ path: '/portfolio#naturdoku' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+
+    <!-- Modal: Kamera -->
+    <div
+      v-if="activeModal === 'camera'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Fotografie</h2>
+        <p>
+          Hier kannst du dir meine fotografischen Arbeiten anschauen.
+        </p>
+
+        <div class="image-grid">
+          <div class="image-coloumn">
+            <img src="assets/images/Fotografie/Bild4_29.07.23.JPG" alt="">
+            <img src="assets/images/Fotografie/Bild33_16.09.2022.JPG" alt="">
+          </div>
+          <div class="image-coloumn">
+            <img src="assets/images/Fotografie/Bild19_17.06.2022.JPG" alt="">
+            <img src="assets/images/Fotografie/Bild46_26.05.2023.jpg" alt="">
+          </div>
+          <div class="image-coloumn">
+            <img src="assets/images/Fotografie/Bild25_13.04.2023.jpg" alt="">
+            <img src="assets/images/Fotografie/Bild52_24.06.2022.JPG" alt="">
+          </div>
+        </div>
+
+        <NuxtLink :to="{ path: '/gallery' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+
+    <!-- Modal: Game -->
+    <div
+      v-if="activeModal === 'game'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Game Development</h2>
+
+        <p>
+          Ein von mir und Kommilitonen entwickeltes Spiel, welches wir im Studium entwickelt haben.
+        </p>
+
+        <img src="assets/images/Game_Cover.png" alt="">
+
+        <NuxtLink :to="{ path: '/portfolio#game' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: Cooking -->
+    <div
+      v-if="activeModal === 'cooking'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Rezepte</h2>
+
+        <p>
+          Ich koche und backe gerne in meiner Freizeit. Hier findest du einige meiner Rezepte, die ich gerne teile.
+        </p>
+
+        <div class="small-image-grid">
+          <img src="/images/recipes/Japchae.jpeg" alt="">
+          <img src="/images/recipes/Kartoffelsalat.jpeg" alt="">
+          <img src="/images/recipes/Wurstgulasch_1.jpeg" alt="">
+        </div>        
+
+        <NuxtLink :to="{ path: '/recipe_overview' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: pearl Schmuck -->
+    <div
+      v-if="activeModal === 'jewelry'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Pearl Schmuck</h2>
+
+        <p>
+          Werbevideo für die imaginäre Schmuckmarke Pearl. Eins der ersten Projekte im Studium.
+        </p>
+
+        <img src="assets/images/poster/Pearl-Schmuck_Poster.png" alt="">    
+
+        <NuxtLink :to="{ path: '/pearl#schmuck' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: pearl Obst -->
+    <div
+      v-if="activeModal === 'vhs'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Pearl Rundes Obst</h2>
+
+        <p>
+          Werbevideo für die imaginäre Obstmarke Pearl, die nur rundes Obst verkauft. Das Setting spielt in den 50er/60er Jahren.
+        </p>
+
+        <img src="assets/images/poster/Pearl-rundes_Obst_Poster.png" alt="">    
+
+        <NuxtLink :to="{ path: '/pearl#obst' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: opening/DVD -->
+    <div
+      v-if="activeModal === 'opening'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Vorspann</h2>
+
+        <p>
+          Ein Vorspann für einen imaginären Film, um die Kriterien dafür kennenzulernen.
+        </p>
+
+        <img src="assets/images/poster/Vorspann_Poster.jpeg" alt="">    
+
+        <NuxtLink :to="{ path: 'portfolio#vorspann' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: Kunst -->
+    <div
+      v-if="activeModal === 'pictureframes'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Kunst</h2>
+
+        <p>
+          In meiner Freizeit betätige ich mich gerne kreativ. Hier findest du einige meiner Werke. Auch paar, die während meines Studiums entstanden sind
+        </p>
+
+        <div class="image-grid">
+          <div class="image-coloumn">
+            <img src="/images/art/Bild2_Holzschnitt.jpg" alt="">
+            <img src="/images/art/Bild8_Selbststudium.jpg" alt="">
+          </div>
+          <div class="image-coloumn">
+            <img src="/images/art/Bild15_Selbststudium.jpg" alt="">
+            <img src="/images/art/Bild23_Naturstudium(2).jpg" alt="">
+          </div>
+          <div class="image-coloumn">
+            <img src="/images/art/Bild31_Selbststudium.jpg" alt="">
+            <img src="/images/art/Bild37_Selbststudium.png" alt="">
+          </div>
+        </div>
+
+        <NuxtLink :to="{ path: 'portfolio#vorspann' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: Katzenanimation -->
+    <div
+      v-if="activeModal === 'animationcat'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Katzenanimation Catouflage</h2>
+
+        <p>
+          Ein Projekt aus dem Studium ist auch dieser kleine Animationsfilm. 
+        </p>
+
+        <img src="assets/images/poster/Catouflage_Poster2.png" alt="Katzenanimation Catouflage">
+
+        <NuxtLink :to="{ path: 'animation#catouflage' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: Animationsübungen -->
+    <div
+      v-if="activeModal === 'animations'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Animationsübungen</h2>
+
+        <p>
+          Um Animationstechniken näher kennen zulernen, habe ich einige kleine Übungen erarbeitet 
+        </p>
+
+        <div class="small-image-grid">
+        <img src="/assets/images/poster/bouncingBall_Poster.png" alt="Katzenanimation Catouflage">
+        <img src="/assets/images/poster/Morphaufgabe_poster.png" alt="Katzenanimation Catouflage">
+        <img src="/assets/images/poster/walking_Poster.png" alt="Katzenanimation Catouflage">
+        </div>
+
+        <NuxtLink :to="{ path: 'animation#animationpractice' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+    <!-- Modal: Videoschnitt -->
+    <div
+      v-if="activeModal === 'videoediting'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Videoschnitt</h2>
+
+        <p>
+          Eins der ersten Projekte im Studium war einen Film zu drehen, der bestimmte Kameraeinstellungen beinhaltete und diesen dann zu schneiden. Hier ist das Ergebnis.
+        </p>
+
+        <img src="/assets/images/poster/Videoschnitt_Poster.png" alt="Katzenanimation Catouflage">
+
+        <NuxtLink :to="{ path: 'portfolio#videoschnitt' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
+     <!-- Modal: Filmposter -->
+    <div
+      v-if="activeModal === 'movieposter'"
+      class="modal-overlay"
+      @click.self="closeModal"
+    >
+      <div class="modal">
+        <button class="modal-close" @click="closeModal">
+          ×
+        </button>
+
+        <h2>Filmposter</h2>
+        <p>
+          Ebenso war eine Aufgabe im Studium, ein Filmposter zu gestalten. Ich habe mich für eine Adaption des Filmposters von "Bohemian Rhapsody" entschieden.
+        </p>
+        <img src="/assets/images/Filmplakat.png" alt="">
+        <NuxtLink :to="{ path: '/portfolio#filmplakar' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -378,5 +750,124 @@ onUnmounted(() => {
     40%{background-position:0% 100%, 50%   0%,100%  50%}
     60%{background-position:0%  50%, 50% 100%,100%   0%}
     80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+
+  width: min(600px, 90vw);
+  padding: 2rem;
+
+  background: rgb(233, 249, 217);
+  border-radius: 1rem;
+  border: 5px solid #8cb969;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #36401f;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+
+  border: none;
+  background: none;
+
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal-close:hover {
+  color: #c43030;
+}
+
+.modal h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.modal img {
+  border-radius: 1rem;
+  /* border: 2px solid #8cb969; */
+}
+
+.portfoliobutton {
+  /* background-color: #a5b575; */
+  padding: 10px 10px;
+  border-radius: 10px;
+  /* width: 40px; */
+  width: 10%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  align-self: center;
+}
+.portfoliobutton i {
+  color: #5e8d3b;
+  font-size: 30px;
+}
+.portfoliobutton:hover {
+  background-color: #bac793;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image-grid .image-column {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+}
+
+.image-grid .image-column img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    /* transition: transform 0.3s ease; */
+}
+
+.small-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+.small-image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 </style>
