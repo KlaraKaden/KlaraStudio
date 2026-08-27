@@ -102,7 +102,7 @@ useHead({ title: 'ALLES KLARA. - Rezepte' })
 
 import fallbackImg from '~/assets/images/Bild_folgt.png'
 import useScrollTop from '../../composables/useScrollTop'
-import { ref, computed, nextTick, watch } from 'vue'
+import { ref, computed, nextTick, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 type Recipe = {
@@ -283,9 +283,10 @@ const highlightFilterRecipe = (filter: string) => {
   }
 
   const mappedFilter = filterMap[normalizedFilter] || filterMap[filter] || 'allerezepte'
-  nextTick(() => {
-    filterRecipe(mappedFilter, null)
-  })
+  // nextTick(() => {
+  //   filterRecipe(mappedFilter, null)
+  // })
+  filterRecipe(mappedFilter, null)
 }
 
 const clearActiveMarkers = () => {
@@ -330,13 +331,47 @@ function search_recipe(e: Event | string) {
   })
 }
 
-watch(() => route.query.filterrecipe, (newFilter) => {
-  if (newFilter) {
-    highlightFilterRecipe(String(newFilter))
+// watch(() => route.query.filterrecipe, (newFilter) => {
+//   if (newFilter) {
+//     highlightFilterRecipe(String(newFilter))
+//   } else {
+//     filterRecipe('allerezepte', null)
+//   }
+// })
+// watch(
+//   () => route.query.filterrecipe,
+//   (newFilter) => {
+//     if (newFilter) {
+//       highlightFilterRecipe(String(newFilter))
+//     } else {
+//       filterRecipe('allerezepte', null)
+//     }
+//   },
+//   { immediate: true }
+// )
+
+onMounted(async () => {
+  await nextTick()
+
+  const filter = route.query.filterrecipe
+
+  if (filter) {
+    highlightFilterRecipe(String(filter))
   } else {
     filterRecipe('allerezepte', null)
   }
 })
+
+watch(
+  () => route.query.filterrecipe,
+  (newFilter) => {
+    if (newFilter) {
+      highlightFilterRecipe(String(newFilter))
+    } else {
+      filterRecipe('allerezepte', null)
+    }
+  }
+)
 </script>
 
 <style scoped>

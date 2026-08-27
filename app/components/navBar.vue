@@ -1,33 +1,33 @@
 <template>
     <nav>
         <ul class="navigationbar">
-            <li class="parent">
-                <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'allerezepte' } }" @click="() => { setRecipeFilter('allerezepte'); setActiveLink('recipes'); closeMenus() }">Rezepte</NuxtLink>
+            <li class="parent"  :class="{ 'parent-activenav': activeNav && activeNav.startsWith('recipes') }">
+                <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'allerezepte' } }" @click="() => { setActiveLink('recipes'); closeMenus() }" :class="{ activenav: activeNav === 'recipes' }">Rezepte</NuxtLink>
                 <ul class="child">
                     <li class="parent upperBorder expandmenu">
-                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'hauptspeisen' } }" @click="() => { setRecipeFilter('hauptspeisen'); setActiveLink('recipes:hauptspeisen'); closeMenus() }">Hauptspeisen</NuxtLink>
+                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'hauptspeisen' } }" @click="() => { setActiveLink('recipes:hauptspeisen'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:hauptspeisen' }">Hauptspeisen</NuxtLink>
                         <ul class="child topzero">
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'auflauf' } }" @click="() => { setRecipeFilter('auflauf'); setActiveLink('recipes:auflauf'); closeMenus() }">Auflauf</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'fleisch' } }" @click="() => { setRecipeFilter('fleisch'); setActiveLink('recipes:fleisch'); closeMenus() }">Fleisch</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'nudeln' } }" @click="() => { setRecipeFilter('nudeln'); setActiveLink('recipes:nudeln'); closeMenus() }">Nudeln</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'suppe' } }" @click="() => { setRecipeFilter('suppe'); setActiveLink('recipes:suppe'); closeMenus() }">Suppen</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'sossen' } }" @click="() => { setRecipeFilter('sossen'); setActiveLink('recipes:sossen'); closeMenus() }">Soßen</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'auflauf' } }" @click="() => { setActiveLink('recipes:auflauf'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:auflauf' }">Auflauf</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'fleisch' } }" @click="() => { setActiveLink('recipes:fleisch'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:fleisch' }">Fleisch</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'nudeln' } }" @click="() => { setActiveLink('recipes:nudeln'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:nudeln' }">Nudeln</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'suppe' } }" @click="() => { setActiveLink('recipes:suppe'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:suppe' }">Suppen</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'sossen' } }" @click="() => { setActiveLink('recipes:sossen'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:sossen' }">Soßen</NuxtLink></li>
                         </ul>
                     </li>
-                    <li class="parent"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'nachspeise' } }" @click="() => { setRecipeFilter('nachspeise'); setActiveLink('recipes:nachspeise'); closeMenus() }">Nachspeise</NuxtLink></li>
+                    <li class="parent"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'nachspeise' } }" @click="() => { setActiveLink('recipes:nachspeise'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:nachspeise' }">Nachspeise</NuxtLink></li>
                     <li class="parent expandmenu">
-                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'salate' } }" @click="() => { setRecipeFilter('salate'); setActiveLink('recipes:salate'); closeMenus() }">Salate</NuxtLink>
+                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'salate' } }" @click="() => { setActiveLink('recipes:salate'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:salate' }">Salate</NuxtLink>
                         <ul class="child">
-                            <li class="upperBorder"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'mitkartoffeln' } }" @click="() => { setRecipeFilter('mitkartoffeln'); setActiveLink('recipes:mitkartoffeln'); closeMenus() }">Mit Kartoffeln</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'mitnudeln' } }" @click="() => { setRecipeFilter('mitnudeln'); setActiveLink('recipes:mitnudeln'); closeMenus() }">Mit Nudeln</NuxtLink></li>
+                            <li class="upperBorder"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'mitkartoffeln' } }" @click="() => { setActiveLink('recipes:mitkartoffeln'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:mitkartoffeln' }">Mit Kartoffeln</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'mitnudeln' } }" @click="() => { setActiveLink('recipes:mitnudeln'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:mitnudeln' }">Mit Nudeln</NuxtLink></li>
                         </ul>
                     </li>
                     <li class="parent expandmenu">
-                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'backen' } }" @click="() => { setRecipeFilter('backen'); setActiveLink('recipes:backen'); closeMenus() }">Backen</NuxtLink>
+                        <NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'backen' } }" @click="() => { setActiveLink('recipes:backen'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:backen' }">Backen</NuxtLink>
                         <ul class="child">
-                            <li class="upperBorder"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'kekse' } }" @click="() => { setRecipeFilter('kekse'); setActiveLink('recipes:kekse'); closeMenus() }">Kekse</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'kuchen' } }" @click="() => { setRecipeFilter('kuchen'); setActiveLink('recipes:kuchen'); closeMenus() }">Kuchen</NuxtLink></li>
-                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'torten' } }" @click="() => { setRecipeFilter('torten'); setActiveLink('recipes:torten'); closeMenus() }">Torten</NuxtLink></li>
+                            <li class="upperBorder"><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'kekse' } }" @click="() => { setActiveLink('recipes:kekse'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:kekse' }">Kekse</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'kuchen' } }" @click="() => { setActiveLink('recipes:kuchen'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:kuchen' }">Kuchen</NuxtLink></li>
+                            <li><NuxtLink :to="{ path: '/recipe_overview', query: { filterrecipe: 'torten' } }" @click="() => { setActiveLink('recipes:torten'); closeMenus() }" :class="{ activenav: activeNav === 'recipes:torten' }">Torten</NuxtLink></li>
                         </ul>
                     </li>
                 </ul>
@@ -239,16 +239,47 @@ const closeMenus = () => {
     }
 }
 
+// const updateActiveFromRoute = () => {
+//     const p = route.path || ''
+//     if (p === '/gallery' || p.startsWith('/gallery')) {
+//         const f = route.query.filter
+//         if (f) activeNav.value = `gallery:${Array.isArray(f) ? f[0] : f}`
+//         else activeNav.value = 'gallery'
+//     } else if (p === '/about_me') {
+//         activeNav.value = 'about'
+//     } else if (p.startsWith('/portfolio')) {
+//         activeNav.value = 'portfolio'
+//     } else {
+//         activeNav.value = ''
+//     }
+// }
 const updateActiveFromRoute = () => {
     const p = route.path || ''
+
     if (p === '/gallery' || p.startsWith('/gallery')) {
         const f = route.query.filter
-        if (f) activeNav.value = `gallery:${Array.isArray(f) ? f[0] : f}`
-        else activeNav.value = 'gallery'
+
+        if (f) {
+            activeNav.value = `gallery:${Array.isArray(f) ? f[0] : f}`
+        } else {
+            activeNav.value = 'gallery'
+        }
+
+    } else if (p === '/recipe_overview' || p.startsWith('/recipe_overview')) {
+        const f = route.query.filterrecipe
+
+        if (f) {
+            activeNav.value = `recipes:${Array.isArray(f) ? f[0] : f}`
+        } else {
+            activeNav.value = 'recipes'
+        }
+
     } else if (p === '/about_me') {
         activeNav.value = 'about'
+
     } else if (p.startsWith('/portfolio')) {
         activeNav.value = 'portfolio'
+
     } else {
         activeNav.value = ''
     }
@@ -273,13 +304,13 @@ const setGalleryFilter = (filter) => {
     }
 }
 
-const setRecipeFilter = (filter) => {
-    // Wenn bereits auf Recipe-Übersicht, direkt filtern
-    if (process.client && window.location.pathname.includes('/recipe_overview')) {
-        const recipeComponent = document.querySelector('.gridcontainer')?.__vue__
-        if (recipeComponent && recipeComponent.applyFilterFromNavigation) {
-            recipeComponent.applyFilterFromNavigation(filter)
-        }
-    }
-}
+// const setRecipeFilter = (filter) => {
+//     // Wenn bereits auf Recipe-Übersicht, direkt filtern
+//     if (process.client && window.location.pathname.includes('/recipe_overview')) {
+//         const recipeComponent = document.querySelector('.gridcontainer')?.__vue__
+//         if (recipeComponent && recipeComponent.applyFilterFromNavigation) {
+//             recipeComponent.applyFilterFromNavigation(filter)
+//         }
+//     }
+// }
 </script>
