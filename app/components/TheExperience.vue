@@ -818,6 +818,7 @@ function findModalByName(name?: string | null) {
   /* width: 50%; */
   max-height: 50vh;
   width: auto;
+  max-width: 20vw;
   align-self: center;
 }
 

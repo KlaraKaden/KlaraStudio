@@ -1,4 +1,11 @@
 <template>
+  <!-- <div class="burger-menu-center">
+        <div class="burger-menu" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div> -->
   <div id="body_recipe_overview">
     <button @click="topFunction" id="topBtn" title="Go to top">
       nach oben <i class="fa-solid fa-arrow-up"></i>
@@ -554,4 +561,86 @@ watch(
     .sidebar-rezepte .dropdown-container li:first-child {
         display: none;
     }
+
+
+    @media (max-width: 1374px) {
+    .sidebar-rezepte {
+        /* display: none; */
+        width: 100%;
+        margin: 0;
+        margin-top: 2em;
+        border: none;
+        text-align: center;
+        position: static;
+    }
+    .main-rezepte {
+        width: 100%;
+    }
+    .recipelink h2 {
+        font-size: 5vw;
+    }
+    .sidebar-rezepte.active {
+        /* display: block; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Erster Eintrag im Burger-Menü anzeigen */
+    .sidebar-rezepte.active .dropdown-container li:first-child {
+        display: block;
+    }
+    #label {
+        margin: 0;
+        position: relative;
+        top: 0;
+    }
+    .magnifyingGlass {
+        bottom: 9px;
+    }
+    .filter-list-rezepte ul {
+        margin-left: 0;
+    }
+    .filter-list-rezepte ul li {
+        padding: 5px 0px 5px 0px;
+        width: 96%;
+    }
+    #searchbar:focus {
+        width: 100%;
+    }
+    .filter-list-rezepte {
+        width: 100%;
+    }
+    #filter-options-recipe {
+        width: 100%;
+    }
+    .filter-list-rezepte li, .dropdown-btn {
+        text-align: center;
+    }
+    .dropdown-container {
+        padding-left: 0px;
+    }
+  }
+
+  @media (max-width: 973px){
+    .recipelink {
+        flex-direction: column;
+    }
+    .recipelink h2 {
+        font-size: 6vw;
+    }
+  }
+
+  @media (max-width: 549px){
+     .main-rezepte a {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .container .headingrezepte {
+        width: 80%;
+    }
+    .container .headingrezepte h3 {
+        font-size: 15vw;
+    }
+  }
 </style>

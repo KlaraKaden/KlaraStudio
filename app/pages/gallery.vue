@@ -1,12 +1,12 @@
 <template>
     <div id="body-gallery">
-        <div class="burger-menu-center">
+        <!-- <div class="burger-menu-center">
             <div class="burger-menu" @click="toggleMenu">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
-        </div>
+        </div> -->
 
         <button @click="topFunction" id="topBtn" title="Go to top">nach oben <i class="fa-solid fa-arrow-up"></i></button>
 
@@ -536,5 +536,60 @@ defineExpose({
         font-size: 40px;
         border: none;
         outline: none;
+    }
+
+
+
+    @media (max-width: 1374px) {
+      .sidebar-gallery {
+        /* display: none; */
+        width: 100%;
+        margin: 0;
+        margin-top: 2em;
+        border: none;
+        text-align: center;
+        position: static;
+    }
+    .main-gallery {
+        width: 100%;
+    }
+    .sidebar-gallery.active {
+        /* display: block; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .filter-list ul { 
+        margin-left: 0;
+    }
+    .filter-list ul li {
+        padding: 5px 0px 5px 0px;
+        width: 96%;
+    }
+    .filter-list { 
+        width: 100%;
+    }
+    #filter-options { 
+        width: 100%;
+    }
+    }
+
+    @media (max-width: 973px) {
+    .container .box {
+        flex-direction: column;
+    }
+    .container .box .image-column {
+        width: 100%;
+    }
+}
+
+    @media (max-width: 549px) {
+        .container .headingportfolio {
+        width: 80%;
+    }
+    .container .headingportfolio h3 {
+        font-size: 15vw;
+    }
     }
 </style>

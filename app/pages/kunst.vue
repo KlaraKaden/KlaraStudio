@@ -369,4 +369,13 @@ defineExpose({
         border: none;
         outline: none;
     }
+
+    @media (max-width: 973px) {
+    .container .box {
+        flex-direction: column;
+    }
+    .container .box .image-column {
+        width: 100%;
+    }
+}
 </style>

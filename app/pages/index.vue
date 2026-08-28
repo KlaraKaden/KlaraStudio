@@ -40,7 +40,7 @@ main {
 .mainicon {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   height: 35rem;
   overflow-y: hidden;
 }
@@ -135,5 +135,48 @@ div.photography img {
 #experiencebutton img {
   height: 150px;
   width: auto;
+}
+
+@media (max-width: 973px) {
+  main {
+    margin: 20px 40px;
+  }
+  div.mainicon {
+        flex-direction: column;
+        align-content: space-around;
+        justify-content: end;
+        /* width: 95%;
+        margin: 20px auto; */
+        flex-wrap: wrap;
+        height: 30rem;
+    }
+    .vl {
+        display: none;
+    }
+    .hl {
+        height: 1px;
+        width: 100%;
+        background-color: #36401f;
+        display: block;
+        display: flex;
+        justify-self: center;
+    }
+    div.recipes {
+        justify-content: center;
+        flex-direction: row;
+    }
+    div.photography {
+        justify-content: center;
+        flex-direction: row;
+    }
+    div.recipes img {
+        display: none;
+    }
+    div.photography img {
+        display: none;
+    }
+    #experiencebutton img {
+      display: none;
+    }
 }
 </style>

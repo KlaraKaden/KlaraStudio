@@ -136,4 +136,41 @@
         gap: 10vw;
         margin: 0 auto;
     }
+
+    @media (max-width: 1374px) {
+        div#aboutMe {
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100%;
+    }
+    div.self-image {
+        display: grid;
+        justify-content: center;
+    }
+    /* div.selftext {
+        width: 100vw;
+    } */
+    #self-image {
+        margin-bottom: 2em;
+    }
+    #gif-sheep {
+        margin: 0;
+        justify-self: center;
+    }
+    }
+
+    @media (max-width: 765px) {
+        #self-image {
+        width: 300px; 
+    }
+    #gif-sheep {
+        width: 300px;
+    }
+    div.selftext {
+        margin: 1em;
+    }
+    .informationtext {
+        margin: 0.5em 3em;
+    }
+    }
 </style>

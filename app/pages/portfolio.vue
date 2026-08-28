@@ -27,7 +27,7 @@
             
             <article class="portfolio-theme" id="naturdoku">
                 <div>
-                    <h2>Naturdokumentation</h2>
+                    <h2>Naturdoku</h2>
                     <p>Aufgabe war es, eine Dokumentation zu filmen. 
                         Ich wollte gerne mein Makroobjektiv für mein Handy verwenden, weil ich den Stil damit aufgenommenen Bilder liebe.
                         Sie geben einen Einblick in die winzige Welt der Natur, die wir sonst leicht übersehen.
@@ -306,5 +306,14 @@ onBeforeUnmount(() => {
 #experiencebutton img {
   height: 100px;
   width: auto;
+}
+
+@media (max-width: 549px) {
+    .container .headingportfolio {
+        width: 80%;
+    }
+    .container .headingportfolio h3 {
+        font-size: 15vw;
+    }
 }
 </style>
