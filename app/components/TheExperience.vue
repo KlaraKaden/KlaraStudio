@@ -521,7 +521,7 @@ function findModalByName(name?: string | null) {
 
         <img src="assets/images/poster/Pearl-rundes_Obst_Poster.png" alt="">    
 
-        <NuxtLink :to="{ path: '/pearl', hash: '#obst' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/pearl', hash: '#rundesObst' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -544,7 +544,7 @@ function findModalByName(name?: string | null) {
 
         <img src="assets/images/poster/Vorspann_Poster.jpeg" alt="">    
 
-        <NuxtLink :to="{ path: 'portfolio', hash: '#vorspann' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/portfolio', hash: '#vorspann' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -580,7 +580,7 @@ function findModalByName(name?: string | null) {
           </div>
         </div>
 
-        <NuxtLink :to="{ path: 'portfolio', hash: '#vorspann' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/kunst' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -603,7 +603,7 @@ function findModalByName(name?: string | null) {
 
         <img src="assets/images/poster/Catouflage_Poster2.png" alt="Katzenanimation Catouflage">
 
-        <NuxtLink :to="{ path: 'animation', hash: '#catouflage' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/animation', hash: '#catouflage' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -630,7 +630,7 @@ function findModalByName(name?: string | null) {
         <img src="/assets/images/poster/walking_Poster.png" alt="Katzenanimation Catouflage">
         </div>
 
-        <NuxtLink :to="{ path: 'animation', hash: '#animationpractice' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/animation', hash: '#animationpractice' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -653,7 +653,7 @@ function findModalByName(name?: string | null) {
 
         <img src="/assets/images/poster/Videoschnitt_Poster.png" alt="Katzenanimation Catouflage">
 
-        <NuxtLink :to="{ path: 'portfolio', hash: '#videoschnitt' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/portfolio', hash: '#filmplakat' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 
@@ -672,7 +672,7 @@ function findModalByName(name?: string | null) {
         <p>
           Ebenso war eine Aufgabe im Studium, ein Filmposter zu gestalten. Ich habe mich für eine Adaption des Filmposters von "Bohemian Rhapsody" entschieden.
         </p>
-        <img src="/assets/images/Filmplakat.png" alt="">
+        <img src="/assets/images/Filmplakat.png" alt="" class="portrait">
         <NuxtLink :to="{ path: '/portfolio', hash: '#filmplakat' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
@@ -807,7 +807,18 @@ function findModalByName(name?: string | null) {
 }
 .modal img {
   border-radius: 1rem;
+  width: 100%;
+  height: auto;
   /* border: 2px solid #8cb969; */
+}
+.modal img.portrait {
+  /* width: auto;
+  max-height: 60vh;
+  max-width: 100%; */
+  /* width: 50%; */
+  max-height: 50vh;
+  width: auto;
+  align-self: center;
 }
 
 .portfoliobutton {
