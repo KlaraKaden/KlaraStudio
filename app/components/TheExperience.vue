@@ -493,7 +493,7 @@ function findModalByName(name?: string | null) {
         <h2>Pearl Schmuck</h2>
 
         <p>
-          Werbevideo für die imaginäre Schmuckmarke Pearl. Eins der ersten Projekte im Studium.
+          Werbevideo für die imaginäre Schmuckmarke Pearl. Eines der ersten Projekte im Studium.
         </p>
 
         <img src="assets/images/poster/Pearl-Schmuck_Poster.png" alt="">    
