@@ -653,7 +653,7 @@ function findModalByName(name?: string | null) {
 
         <img src="/assets/images/poster/Videoschnitt_Poster.png" alt="Katzenanimation Catouflage">
 
-        <NuxtLink :to="{ path: '/portfolio', hash: '#filmplakat' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
+        <NuxtLink :to="{ path: '/portfolio', hash: '#videoschnitt' }" class="portfoliobutton" target="_blank"><i class="fa-solid fa-circle-chevron-right"></i></NuxtLink>
       </div>
     </div>
 

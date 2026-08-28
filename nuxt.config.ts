@@ -62,7 +62,9 @@ export default defineNuxtConfig({
     //     { name: 'description', content: 'Beschreibung der Seite' }
     //   ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/KlaraStudio/favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: '/KlaraStudio/favicon.png' },
+        { rel: 'apple-touch-icon', href: '/KlaraStudio/favicon.png' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined' }
